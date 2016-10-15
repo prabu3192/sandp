@@ -1,0 +1,36 @@
+{% load staticfiles %}
+  <!-- data start -->
+  
+  <div class="container ">
+    <div class="row "> 
+      <!-- left sec start -->
+      <div class="col-md-11 col-sm-11">
+        <div class="row"> 
+			{% block latest_news %}
+			{% include "latest_news.html" %}
+			{% endblock %}
+			{% block beauty_fashion %}
+			{% include "beauty_fashion.html" %}
+			{% endblock %}
+        </div>
+      </div>
+      <!-- left sec end --> 
+	  <!-- right sec start -->
+	  <div class="col-sm-5 hidden-xs right-sec">
+		  {% block right_sec %}
+		  {% include "home_right_sec.html" %}
+		  {% endblock %}
+	  </div>
+	  <!-- right sec end --> 
+    </div>
+	<div class="row">
+		<!-- Horoscope start-->
+		<div class="col-sm-16 wow fadeInUp animated " data-wow-delay="0.5s" data-wow-offset="100">
+		{% block horoscope %}
+		{% include "horoscope.html" %}
+		{% endblock %}
+		</div>
+		<!-- Horoscope end-->
+	</div>
+  </div>
+  <!-- data end --> 

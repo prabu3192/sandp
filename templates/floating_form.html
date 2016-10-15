@@ -1,0 +1,20 @@
+<!-- contact form start -->
+{% if perms.home.add_article %}
+<div class="floating-form" id="contact_form" style="display:none;">
+<div class="contact-opener">Gestion des articles</div>
+	<div id="floating-body">
+    <div class="floating-form-heading">Gestion des articles</div>
+    <div id="contact_results"></div>
+    <div id="contact_body">
+        <p>        	
+			<a {% if request.user.is_authenticated %} href="{% url 'addarticle' %}" 
+			{% else %} data-toggle="modal" data-target="#login-modal"  {% endif %} class="btn btn-default facebook round" >Ajouter article</a>
+        </p>
+		<p>
+        	<a href="/admin"  class="btn btn-default twitter round">Modifier article</a>
+        </p>
+    </div>
+	</div>
+</div>
+{% endif %}
+<!-- contact form end -->

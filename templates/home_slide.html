@@ -1,0 +1,26 @@
+{% load i18n %}
+{% load thumbnail %}
+<div id="sync1" class="owl-carousel">
+{% for lastarticle in lastArticles %}
+  <div class="box item"> <a href="{% url 'myview' lastarticle.id  %}">
+	<div class="carousel-caption">{{lastarticle.titre}}</div>
+	<img class="img-responsive" src="{% thumbnail lastarticle.image 1600x972  %}" alt=""/>
+	<div class="overlay"></div>
+	<div class="overlay-info">
+	  <div class="cat">
+		<p class="cat-data"><span class="ion-model-s"></span>lifestyle</p>
+	  </div>
+	  <div class="info">
+		<p><span class="ion-android-data"></span>blabla<span class="ion-chatbubbles"></span>351</p>
+	  </div>
+	</div>
+	</a></div>
+{%endfor%}
+</div>
+<div class="row">
+  <div id="sync2" class="owl-carousel">
+  {% for lastarticle in lastArticles %}
+	<div class="item"><img class=" img-responsive" src="{% thumbnail lastarticle.image 1600x972  %}" alt=""/></div>
+  {%endfor%}
+  </div>
+</div>

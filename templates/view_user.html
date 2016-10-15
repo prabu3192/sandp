@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block jumbotron %}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="container text-center ">
+ <div class="row">
+    <div >
+     {% for offre in offres%}
+        <h1>Titre : {{ offre.titre }} </h1>
+        <h3>Entreprise : {{ offre.entreprise }}</h3>
+        <p>Description : {{ offre.description }}</p>
+        <p>Salaire : {{ offre.salaire }} $</p>
+        <p>Contrat : {{ offre.contrat }}</p>
+        <p>Contact_phone : {{ offre.contact_phone }}</p>
+        <p>Contact_email : {{ offre.contact_email }}</p>
+        <p>Codepostal : {{ offre.codepostal }}</p>
+        <p>Date : {{ offre.timestamp}}</p>
+
+     {% endfor %}
+        <a href="#" class="btn btn-info">Postuler</a>
+     </div>
+ </div>
+</div>
+
+
+
+
+<!--<div class="row">-->
+  <!--<div class="col-md-4 col-sm-4" style='background-color:blue;'>.col-md-4</div>-->
+  <!--<div class="col-md-4 col-sm-4" style='background-color:red;'>.col-md-4</div>-->
+  <!--<div class="col-md-4 col-sm-4" style='background-color:orange;'>.col-md-4</div>-->
+<!--</div>-->
+
+
+
+
+{% endblock %}

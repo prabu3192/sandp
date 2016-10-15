@@ -1,0 +1,109 @@
+{% extends "account/base.html" %}
+
+{% load i18n %}
+{% load account socialaccount %}
+
+{% block head_title %}{% trans "Sign In" %}{% endblock %}
+
+{% block content %}
+  <!-- data start -->
+    <div class="container ">
+    <div class="row ">
+	  {% block leftsec %}
+      <!-- left sec start -->
+      <div class="col-md-11 col-sm-11">
+        <div class="row">
+			{% block articles%}
+				<div class="accountlogin" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+					aria-hidden="true">
+					<div class="modal-dialog">
+						<div class="modal-content">
+							<div class="modal-header login_modal_header">
+								<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+									&times;</button>
+								<h2 class="modal-title" id="myModalLabel">
+									{% trans "Login to Your Account" %}</h2>
+							</div>
+							<div class="modal-body login-modal">
+								<br />
+								<div class="clearfix">
+								</div>
+								<div class="logindiv" id='social-icons-conatainer'>
+							<div class='modal-body-left'>
+								<div class="form-group-login">
+									<form class="login" method="POST" action="{% url 'account_login' %}">
+										<div class="form-group">
+											{% csrf_token %}
+											{{ form.as_p }}
+										  {% if redirect_field_value %}
+											 <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+										  {% endif %}
+											<i class="fa fa-user login-field-icon"></i>
+											<i class="fa fa-lock login-field-icon"></i>
+											<button class="primaryAction btn  modal-login-btn" type="submit" style="background-color: #e5007e; color: #ffec00;">{% trans "Sign In" %}</button>
+											<a class="button secondaryAction login-link text-center" href="{% url 'account_reset_password' %}" id="btnReset">{% trans "Forgot Password?" %}</a>
+											<br />
+										</div>         
+									  </form>
+								</div>
+							</div>
+							<div class='modal-body-right'>
+									<div class="modal-social-icons">
+											{% providers_media_js %}
+											<p><a href="{% provider_login_url "facebook" method="js_sdk" %}" class="btn btn-default facebook"><i class="fa fa-facebook modal-icons"></i>
+												Sign In with Facebook </a></p>
+
+											<p><a href="{% provider_login_url "twitter" %}" class="btn btn-default twitter"><i class="fa fa-twitter modal-icons">
+												</i>Sign In with Twitter </a></p>
+											<p><a href="{% provider_login_url "google" %}" class="btn btn-default google"><i class="fa fa-google-plus modal-icons">
+												</i>Sign In with Google </a></p>
+									</div>
+							</div>
+							
+							<div id='center-line'>
+										{% trans "OR" %}
+									</div>
+								</div>
+								<div class="clearfix">
+								</div>
+							<div class="form-group modal-register-btn">
+							  <form class="signup" id="signup_form" method="post" action="{% url 'account_signup' %}">
+								{% csrf_token %}
+								{{ signupform.as_p }}
+								{% if redirect_field_value %}
+								<input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+								{% endif %}
+								<button type="submit" id="btnRegiser" class="btn btn-default">{% trans "Sign Up" %} &raquo;</button>
+							  </form>
+							</div>
+						</div>
+							<div class="clearfix">
+							</div>
+							<div class="modal-footer login_modal_footer">
+							</div>
+						</div>
+					</div>
+				</div>
+			{% endblock %}
+        </div>
+      </div>
+      <!-- left sec end --> 
+	  {% endblock %}
+	  <!-- right sec start -->
+	  	{% block sideBlock %}
+			  <div class="col-sm-5 hidden-xs right-sec">
+			  {% block right_sec%}
+			  {% for PubArticle in PubArticles %}
+                  <div class="right-img-top"> <a href="#">                    
+						<img src="{{PubArticle.image.url}}" style="width: 100%;height:20.8em;"/>                    
+                    </a> </div>
+         	  {% endfor %}
+		{% endblock %}
+			  </div>
+		{% endblock %}
+	  <!-- right sec end --> 
+
+    </div>
+  </div>
+
+{% endblock %}

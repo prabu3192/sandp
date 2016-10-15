@@ -1,0 +1,30 @@
+ {% extends "home.html" %}
+ {% load crispy_forms_tags %}
+
+{% block style %}
+h1 {
+    border-bottom: 5px !important;
+	padding-bottom:5px;
+}
+{% endblock %}
+
+{% block topsec %}
+{% endblock %}
+
+{% block articles %}
+
+  <div class="col-sm-15">
+   <h1 style="margin-left: -2.6em;">article</h1>
+
+   <form action="" method="post" enctype="multipart/form-data">{% csrf_token %}
+    {{ form.media }}
+    {{ form|crispy}}
+    <p>
+     <input type="submit" class="btn btn-primary" value="Add" />
+	 <input type="reset" class="btn btn-primary" value="Cancel" />
+    </p>
+   </form>
+  </div>
+
+{% endblock %}
+

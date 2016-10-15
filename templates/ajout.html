@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+
+
+<style>
+    {% block style %}
+
+    .slide, .article, .pub, .nouvo{
+        border: 1px solid black;
+        height: 100%;
+        text-align: center;
+
+    }
+    .slide{
+        background-color: aqua;
+    }
+    .article{
+        background-color:blue;
+    }
+    .pub{
+        background-color:blueviolet;
+    }
+    .nouvo {
+        background-color:chartreuse;
+    }
+
+    {% endblock %}
+
+</style>
+
+{% block content %}
+
+<div class="jumbotron">
+</div>
+<div class="container ">
+    <div class="row ">
+        <div class="col-md-8 slide">
+            <a href="{% url 'article' %}"><h1> slide </h1></a>
+            <br/><br/><br/><br/><br/><br/><br/><br/>
+            <div class="row">
+                <div class="col-md-7 article">
+                    <a href="{% url 'article' %}"><h1>Article</h1></a>
+                </div>
+                <div class="col-md-5 nouvo">
+                    <a href="{% url 'article' %}"><h1>Nouvo</h1></a>
+                </div>
+            </div>
+        </div>
+        <div class="  col-md-4 pub">
+            <a href="{% url 'article' %}"><h1>Pub</h1></a>
+        </div>
+    </div>
+</div>
+
+
+
+
+{% endblock %}

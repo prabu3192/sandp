@@ -1,0 +1,53 @@
+{% load staticfiles %}
+  <!-- top sec start -->
+      <!-- hot news end --> 
+      <!-- banner outer start -->
+      <div class="col-sm-16 hot-news hidden-xs">
+      {% block latest_news %}
+        <div class="row">
+          <div class="col-sm-15"> <span class="ion-ios7-timer icon-news pull-left"></span>
+            <ul id="js-news" class="js-hidden">
+              {% for lastarticle in lastArticles %}
+              <li class="news-item"><a href="#">{{lastarticle.contenu |safe|truncatewords:"10"|linebreaks }}</a></li>
+              {% endfor %}
+            </ul>
+          </div>
+          <div class="col-sm-1 shuffle text-right"><a href="#"><span class="ion-shuffle"></span></a></div>
+        </div>
+        {% endblock %}
+      </div>
+      <div  class="col-sm-16 banner-outer wow fadeInLeft animated" data-wow-delay="1s" data-wow-offset="50">
+        <div class="row">
+          <div class="col-sm-16 col-md-11 col-lg-11"> 
+            
+            <!-- carousel start -->
+
+			{% block home_slide %}
+			{% include "home_slide.html" %}
+			{% endblock %}
+          </div>
+          <div class="col-sm-6 col-md-6 col-lg-5 hidden-sm hidden-xs">
+            <div class="row">
+              
+              <div class="col-md-16 col-lg-16">
+                <div class="row">
+				{% block advertisment1 %}
+        {% for PubArticle in PubArticles %}
+                  <div class="right-img-top"> <a href="#">                    
+						<img src="{{PubArticle.image.url}}" style="width: 100%;height:20.8em;"/>                    
+                    </a> </div>
+         {% endfor %}
+                {% endblock %} 
+
+                </div>
+                <div class="row">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- banner outer end --> 
+      
+    </div>
+  <!-- top sec end --> 

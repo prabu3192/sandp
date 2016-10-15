@@ -1,0 +1,52 @@
+{% extends "home.html" %}
+{% load staticfiles i18n %}
+{% load thumbnail %}
+
+{% block style %}
+h1 {
+    border-bottom: 5px !important;
+	padding-bottom:5px;
+}
+
+{% endblock %}
+
+{% block topsec %}
+<div class="container">
+    <div class="page-header">
+      <h1>Categories</h1>
+    </div>
+  </div>
+{% endblock %}
+ 
+{% block articles %}
+<div class="col-sm-16">
+    <div class="row">
+     {% block article_details %}
+    <div class="sec-topic col-sm-16  wow fadeInDown animated " data-wow-delay="0.5s">
+      <div class="row">
+      {% for articleCategorie in articleCategories%}
+      <div class="col-md-8">
+      <div class="col-sm-16">
+          <img class="img-thumbnail img-responsive" src="{% thumbnail articleCategorie.image 600x398  %}"  alt="image does not avalable"/>
+      </div>
+      <div class="col-sm-16">
+        <h3>{{articleCategorie.titre}}</h3>
+        <div class="text-danger sub-info-bordered">
+        <div class="author"><span class="ion-person icon"></span>{{ articleCategorie.auteur}}</div>
+        <div class="time"><span class="ion-android-data icon"></span>{{ articleCategorie.publication_date|date:"M d Y" }}</div>
+        <div class="comments"><span class="ion-chatbubbles icon"></span>{{ articleCategorie.nbComment }}</div>
+        <div class="stars"></div>
+        </div>
+        <p>{{ articleCategorie.contenu|safe|truncatewords:"20"|linebreaks}}</p>
+        <hr>
+      </div>
+      </div>
+       {% endfor %}
+      </div>
+    </div>
+    {% endblock %}
+    </div>
+</div>
+{% endblock %}
+
+ 

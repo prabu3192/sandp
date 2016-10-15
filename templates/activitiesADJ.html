@@ -1,0 +1,79 @@
+{% load staticfiles i18n %}
+{% load thumbnail %}
+<!-- activities start -->
+<div class="col-sm-16 bt-space wow fadeInUp animated" data-wow-delay="1s" data-wow-offset="130"> 
+  <!-- Nav tabs -->
+  <ul class="nav nav-tabs nav-justified " role="tablist">
+	<li class="active"><a href="#popular" role="tab" data-toggle="tab">Populaire</a></li>
+	<li><a href="#recent" role="tab" data-toggle="tab">Récent</a></li>
+	<li><a href="#comments" role="tab" data-toggle="tab">commentaires</a></li>
+  </ul>
+  
+  <!-- Tab panes -->
+  <div class="tab-content">
+	<div class="tab-pane active" id="popular">
+	  <ul class="list-unstyled">
+	  	{% for popularArticle in popularArticles %}
+		<li> <a href="#">
+		  <div class="row">
+            <a href="{% url 'myview' popularArticle.id  %}">
+			<div class="col-sm-5 col-md-4">
+				<img class="img-thumbnail pull-left" src="{{popularArticle.image.url}}" width="164" height="152" alt=""/> 
+			</div>
+			<div class="col-sm-11 col-md-12">
+			  <h4>{{popularArticle.titre}}</h4>
+			  <div class="text-danger sub-info" style="color:#e5007e">
+				<div class="time"><span class="ion-android-data icon"></span>{{ popularArticle.publication_date|date:"M d Y"}}</div>
+				<div class="comments"><span class="ion-chatbubbles icon"></span>{{popularArticle.nbComment}}</div>
+				<div class="stars"><span></span><span></span><span></span><span></span><span></span></div>
+			  </div>
+			</div>
+		    </a>
+		  </div>
+		  </a> </li>
+		  {% endfor %}
+	  </ul>
+	</div>
+	<div class="tab-pane" id="recent">
+	  <ul class="list-unstyled">
+	  	{% for lastarticle in lastArticles %}
+		<li> <a href="#">
+		  <div class="row">
+		  	<a href="{% url 'myview' lastarticle.id  %}">
+			<div class="col-sm-5  col-md-4 "><img class="img-thumbnail pull-left" src="{{lastarticle.image.url}}" width="164" height="152" alt=""/> </div>
+			<div class="col-sm-11  col-md-12 ">
+			  <h4>{{ lastarticle.titre }}</h4>
+			  <div class="text-danger sub-info" style="color:#e5007e">
+				<div class="time"><span class="ion-android-data icon"></span>{{lastarticle.publication_date|date:"M d Y"}}</div>
+				<div class="comments"><span class="ion-chatbubbles icon"></span>{{lastarticle.nbComment}}</div>
+				<div class="stars"><span></span><span></span><span></span><span></span><span></span></div>
+			  </div>
+			</div>
+		    </a>
+		  </div>
+		  </a> </li>
+		  {% endfor %}
+	  </ul>
+	</div>
+	<div class="tab-pane" id="comments">
+	  <ul class="list-unstyled">
+		{% for comment in comments %}
+		<li> <a href="#">
+		  <div class="row">
+		  	<a href="{% url 'myview' comment.article.id  %}">
+			<div class="col-sm-5  col-md-4 "><img class="img-thumbnail pull-left" src="{% static 'images/comments/iconcomment.jpg' %}" width="164" height="152" alt=""/> </div>
+
+			<div class="col-sm-11  col-md-12 ">
+			  <h4>{{comment.article.titre}}</h4>
+			  <p>{{comment.comment |safe}}</p>
+			</div>
+			<div class="time" style="color:#e5007e"><span class="ion-android-data icon"></span>{{comment.date_comment|date:"M d Y"}}</div>
+		    </a>
+		  </div>
+		  </a> </li>
+		 {% endfor %}
+	  </ul>
+	</div>
+  </div>
+</div>
+<!-- activities end --> 

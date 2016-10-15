@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+{% block head_title %}Rechercher dans Stars &amp; People{% endblock %}
+
+</style>
+{% block content %}
+
+
+ <div class="row">
+      <div class="col-md-7 ">
+        
+        <div class="media article">
+          <div class="media-left media-top">
+            
+          </div>
+          <div class="media-body">
+            {% if messages %}
+              <ul class="messages">
+                  {% for message in messages %}
+                  <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}je suis la</li>
+                  {% endfor %}
+              </ul>
+
+            {% else %}
+               <div>
+                 
+               <h2> Articles correspondant à <span style="color:#e5007e">{{request.GET.q}} </span></h2></div>
+               <br>
+    			     {% for art in obj_list %}
+          			  <h6><a href="{% url 'myview' art.id  %}">{{ art.titre }}</a></h6> 
+                  <br>         
+      			   {% endfor %}
+               
+               <br/>
+
+               {% if obj_list.has_previous %}
+    	  		     	<a href="?{{page_request_var}}={{obj_list.previous_page_number}}{% if request.GET.q %}&q={{request.GET.q}}{% endif %}"> Précédent </a>
+      			   {% endif %}
+
+      			    Page {{obj_list.number}} of {{obj_list.paginator.num_pages}}
+               {% if obj_list.has_next %}
+                <a href="?{{page_request_var}}={{obj_list.next_page_number}}{% if request.GET.q %}&q={{request.GET.q}}{% endif %}"> Suivent </a>
+                {% endif %}
+            {% endif %}
+          </div>
+        </div>
+       
+      </div>
+      </div>
+<br/>
+<br/>
+</div>
+{% endblock %}

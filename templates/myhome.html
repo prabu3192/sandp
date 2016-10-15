@@ -1,0 +1,160 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+{% load staticfiles %}
+{% block head_title %}Welcome | {{ block.super }}{% endblock %}
+
+<style>
+  {% block style %}
+
+
+  .slide img, .pub img, .star img {
+    width: 100%;
+
+  }
+  body{
+
+    height : 100vh;
+    min-height: 100vh;
+
+  }
+  .article a img {
+    width: 80px;
+  }
+  h1,h3,p {
+    padding: 0;
+    margin: 0;
+  }
+  .article {
+    border-top: 1px solid red;
+  }
+
+.carousel-indicators li{
+    padding: 0;
+    width: 15%;
+    height: 60px;
+    background-color: rgba(0,0,0,0);
+    border: 1px solid #fff;
+    border-radius:0px;
+
+  }
+    .carousel-indicators .active{
+    background-color: rgba(255,0,206,.5);
+    padding: 0;
+    width: 15%;
+    height: 60px;
+
+
+  }
+
+    .pink .active{
+    padding: 0;
+    display:block;
+    width: 80px;
+    height: 80px;
+
+
+  }
+    .pink{
+
+     position :relative;
+    z-index: 10;
+    }
+    .slideimg img{
+    position :relative;
+    z-index: -10;
+    padding: 0;
+    display:block;
+    width: 100%;
+    height: 100%;
+
+
+  }
+
+
+
+{% endblock %}
+
+</style>
+
+{% block content  %}
+
+<div class="row ">
+  <div class="col-md-8 slide">
+
+      <div id="myCarousel" class="carousel slide slider" data-ride="carousel">
+
+       <!-- <ol class="carousel-indicators">
+         {% for slider in slide%}
+            <li class=" slideimg {% if forloop.first%}active{%endif%}"  data-target="#myCarousel" data-slide-to="{{slider.id}}">
+                {% if slider.image %}<img src="{{slider.image.url}}"  height="50">{% endif %}
+                <div class="pink {% if forloop.first%}active{%endif%}"></div>
+            </li>
+        {%endfor%}
+       </ol>  -->
+    <!-- <div class="carousel-inner" role="listbox">
+    {% for slider in slide%}
+        <div class="item{% if forloop.first %} active{% endif %}">
+              <a href="{% url 'myview' slider.id  'slide'  %}" ><img src="{{slider.image.url}}" alt="Chania" width="100" height="100"></a>
+              <div class="carousel-caption capt">
+                  <a href="{% url 'myview' slider.id  'slide' %}" ><h1>{{slider.titre}}</h1></a>
+              </div>
+        </div>
+    {%endfor%}
+    </div> -->
+    <div class="carousel-inner" role="listbox">
+    {% for slider in slide%}
+        <div class="item{% if forloop.first %} active{% endif %}">
+              <a href="{% url 'slide' slider.id  %}" ><img src="{{slider.image.url}}" alt="Chania" width="100" height="100"></a>
+              <div class="carousel-caption capt">
+                  <a href="{% url 'slide' slider.id %}" ><h1>{{slider.titre}}</h1></a>
+              </div>
+        </div>
+    {%endfor%}
+    </div>
+
+  </div>
+
+  <div class="row">
+      <div class="col-md-7 ">
+        <h3>people news {{ section }}</h3>
+        {% for article in articls %}
+        <div class="media article">
+          <div class="media-left media-top">
+            {% if article.image %}
+            <a href="{% url 'myview' article.id 'article' %}" >
+              <img  src="{{article.image.url}}" alt="" class="">
+            </a>
+            {% endif%}
+          </div>
+          <div class="media-body">
+            <a href="{% url 'myview' article.id 'article'  %}" ><h4 class="media-heading">{{ article.titre }}</h4></a>
+            {{ article.contenu|safe }}
+          </div>
+        </div>
+        {%endfor%}
+      </div>
+      <div class="col-md-5 star">
+        {% for n in nouvo %}
+        <a href="{% url 'myview' n.id 'nouvo'  %}" ><h4>{{ n.titre }}</h4></a>
+        <p>{{ n.contenu|safe }}</p>
+        {%endfor%}
+        {% if nouvo.has_previous %}
+                  <a href="?page={{nouvo.previous_page_number}}"> Précédent </a>
+        {% endif %}
+
+          Page {{nouvo.number}} sur {{nouvo.paginator.num_pages}}
+        {% if nouvo.has_next %}
+                 <a href="?page={{nouvo.next_page_number}}"> Suivent </a>
+        {% endif %}   
+      </div>
+  </div>
+  </div>
+  <div class=" pub col-md-4">
+    {% for p in pub %}
+      <a href="{% url 'myview' p.id 'pub' %}" ><h4>{{ p.titre }}</h4></a>
+      <p>{{ p.contenu |safe}}</p>
+    {%endfor%}
+  </div>
+</div>
+
+{% endblock %}

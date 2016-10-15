@@ -1,0 +1,100 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+{% load staticfiles %}
+{% block head_title %}Welcome | {{ block.super }}{% endblock %}
+
+
+<style>
+  {% block style %}
+
+  {% endblock %}
+
+</style>
+
+
+{% block content  %}
+	{% block floatingform %}
+		{% include 'floating_form.html' %}
+	{% endblock %}
+	{% block topsec %}
+		{% include 'topsec.html' %}
+	{% endblock %}
+
+
+  <!-- data start -->
+  
+  <div class="container ">
+    <div class="row ">
+	  {% block leftsec %}
+      <!-- left sec start -->
+      <div class="col-md-11 col-sm-11">
+        <div class="row">
+			{% block articles%}
+				{% include "latest_news.html" %}
+				{% include "beauty_fashion.html" %}
+				<div class="row">
+				<!-- Horoscope start-->
+					<div class="col-sm-16 wow fadeInUp animated " data-wow-delay="0.5s" data-wow-offset="100">
+						{% block horoscope %}
+						{% include "horoscope.html" %}
+						{% endblock %}
+					</div>
+					<!-- Horoscope end-->
+				</div>
+			{% endblock %}
+        </div>
+      </div>
+      <!-- left sec end --> 
+	  {% endblock %}
+	  <!-- right sec start -->
+	  	{% block sideBlock %}
+			  <div class="col-sm-5 hidden-xs right-sec">
+				  {% block right_sec %}
+				  {% include "home_right_sec.html" %}
+				  {% endblock %}
+			  </div>
+		{% endblock %}
+	  <!-- right sec end --> 
+
+    </div>
+  </div>
+		{% block login %}
+
+			{% include 'home_login.html' %}
+			
+		{% endblock %}
+
+	{% endblock %}
+
+{% block extra_js %}
+<script type="text/javascript">
+	$(document).ready(function () {
+
+		$('#btnRegiser').click(function () {
+			$('#login-modal').modal('hide');
+			$('#register-modal').modal('show');
+		});
+
+		$('#btnReset').click(function () {
+			$('.resetpassword').slideToggle();
+		});		
+		
+				var _scroll = true, _timer = false, _floatbox = $("#contact_form"), _floatbox_opener = $(".contact-opener") ;
+		_floatbox.css("right", "-202px"); //initial contact form position
+		_floatbox.show();
+		
+		//Contact form Opener button
+		_floatbox_opener.click(function(){
+			if (_floatbox.hasClass('visiable')){
+				_floatbox.animate({"right":"-202px"}, {duration: 300}).removeClass('visiable');
+			}else{
+			   _floatbox.animate({"right":"0px"},  {duration: 300}).addClass('visiable');
+			}
+		});
+		
+
+	});
+	</script>
+{% endblock %}
+
+

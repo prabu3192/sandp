@@ -1,0 +1,89 @@
+{% load staticfiles i18n %}
+{% load thumbnail %}
+<!-- business start -->
+<div class="col-sm-16">
+<div class="row">
+  <div class="col-md-11 col-sm-16 business  wow fadeInDown animated" data-wow-delay="1s" data-wow-offset="50">
+	<div class="main-title-outer pull-left">
+	  <div class="main-title">Latest News</div>
+	  <div class="span-outer"><span class="pull-right text-danger last-update"><span class="ion-android-data icon"></span>Last update: 2 days ago</span> </div>
+	</div>
+	<div class="row">
+	  <div class="col-sm-16">
+		<div class="row">
+		{% for lastarticle in lastArticles %}
+			{% if forloop.first %}
+		  <div class="col-md-8 col-sm-9 col-xs-16">
+		  	<div class="col-md-12">
+					<img class="img-thumbnail latest-first" src="{% thumbnail lastarticle.image 600x398  %}" img-responsive alt="image does not avalable"/>
+				</div>
+			<div class="topic col-md-12"> <a href="{% url 'myview' lastarticle.id  %}">		
+			  <h3>{{ lastarticle.titre }}</h3>
+			  <div class="text-danger sub-info-bordered" style="color:#e5007e">
+				<div class="time"><span class="ion-android-data icon"></span>{{lastarticle.publication_date|date:"M d Y"}}</div>
+				<div class="comments"><span class="ion-chatbubbles icon"></span>{{lastarticle.nbComment}}</div>
+				<div class="stars"><span></span><span></span><span></span><span></span><span></span></div>
+			  </div>
+			  
+			  <p>{{lastarticle.contenu |safe|truncatewords:"60"|linebreaks }}</p>
+			  </a>
+			</div>
+		  </div>
+		  <div class="col-md-8 col-sm-7 col-xs-16">
+			<ul class="list-unstyled">
+			{% else %}
+			  <li> <a href="{% url 'myview' lastarticle.id  %}">
+				<div class="row">
+				  <div class="col-sm-5 hidden-sm hidden-md"><img class="img-thumbnail pull-left" src="{% thumbnail lastarticle.image 76x76  %}" alt=""/> </div>
+				  <div class="col-sm-16 col-md-16 col-lg-11">
+					<h4>{{ lastarticle.titre }}</h4>
+					<div class="text-danger sub-info" style="color:#e5007e">
+					  <div class="time"><span class="ion-android-data icon"></span>{{lastarticle.publication_date|date:"M d Y"}}</div>
+					  <div class="comments"><span class="ion-chatbubbles icon"></span>{{lastarticle.nbComment}}</div>
+					  <div class="stars"><span></span><span ></span><span></span><span></span><span></span></div>
+					</div>
+				  </div>
+				</div>
+				</a> </li>
+			{% endif %}
+			{%endfor%}
+			</ul>
+		  </div>
+		</div>
+	  </div>
+
+
+	</div>
+  </div>
+
+ <p></p>
+
+  <div class="col-md-5 col-sm-12 hidden-sm hidden-xs business wow fadeInDown animated" data-wow-delay="1s" data-wow-offset="50">
+	<div class="main-title-outer pull-left">  
+		         <div class="main-title">
+                 Shopping</div>
+	</div>
+		{% for shopingArticle in shopingArticles %}
+	 	<div class="col-sm-12 hidden-sm hidden-xs  right-bordered">
+			<div id="vid-thumbs" class="owl-carousel">
+			  <div class="item">
+				<div class="vid-thumb-outer">
+				 <h4>{{shopingArticle.titre}}</h4>
+				 <div class="time"><span class="ion-android-data icon"></span>{{shopingArticle.publication_date|date:"M d Y"}}</div>
+
+		  	<!-- <div class="col-md-12">
+					<img class="img-thumbnail latest-first img-responsive" src="{{lastarticle.image.url}}" alt="image does not avalable"/>
+				</div> -->
+				<div class="col-sm-12" style="width:100%;">
+				 <img src="{% thumbnail shopingArticle.image 236x480  %} " class="img-responsive" alt="image doesn't not available"/></div>
+				</div>
+			  </div>
+			</div>
+	  </div>
+	  {% endfor %}
+	
+   </div>
+</div>
+<hr>
+</div>
+  <!-- business end --> 

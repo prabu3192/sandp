@@ -1,0 +1,16 @@
+SECRET_KEY = 'your key'
+
+EMAIL_HOST = 'smtp.example.com'
+EMAIL_HOST_USER = 'mail@example.com'
+EMAIL_HOST_PASSWORD = 'your password'
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'example django.db.backends.mysql',
+        'NAME': 'name of your database',
+        'USER': 'your user',
+        'PASSWORD': 'popy#33',
+        'HOST': '',
+        'PORT': '',
+    }
+}

@@ -1,0 +1,53 @@
+{% extends "account/base.html" %}
+
+{% load i18n %}
+{% load account socialaccount %}
+
+{% block head_title %}{% trans "Sign In" %}{% endblock %}
+
+{% block content %}
+
+            <div class='modal-body-left'>
+                <div class="form-group">
+                    <form class="login" method="POST" action="{% url 'account_login' %}">
+                        <div class="form-group">
+                            {% csrf_token %}
+                            {{ form.as_p }}
+                          {% if redirect_field_value %}
+                             <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+                          {% endif %}
+                            <i class="fa fa-user login-field-icon"></i>
+                            <i class="fa fa-lock login-field-icon"></i>
+                            <button class="primaryAction btn  modal-login-btn" type="submit" style="background-color: #e5007e; color: #ffec00;">{% trans "Sign In" %}</button>
+                            <a class="button secondaryAction login-link text-center" href="{% url 'account_reset_password' %}" id="btnReset">{% trans "Forgot Password?" %}</a>
+                            <br />
+                        </div>         
+                      </form>
+                </div>
+            </div>
+            <div class='modal-body-right'>
+                <div class='modal-body-right'>
+                    <div class="modal-social-icons">
+                            {% providers_media_js %}
+                            <p><a href="{% provider_login_url "facebook" method="js_sdk" %}" class="btn btn-default facebook"><i class="fa fa-facebook modal-icons"></i>
+                                Sign In with Facebook </a></p>
+
+                            <p><a href="{% provider_login_url "twitter" %}" class="btn btn-default twitter"><i class="fa fa-twitter modal-icons">
+                                </i>Sign In with Twitter </a></p>
+                            <p><a href="{% provider_login_url "google" %}" class="btn btn-default google"><i class="fa fa-google-plus modal-icons">
+                                </i>Sign In with Google </a></p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="form-group modal-register-btn">
+              <form class="signup" id="signup_form" method="post" action="{% url 'account_signup' %}">
+                {% csrf_token %}
+                {{ signupform.as_p }}
+                {% if redirect_field_value %}
+                <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+                {% endif %}
+                <button type="submit" id="btnRegiser" class="btn btn-default">{% trans "Sign Up" %} </button>
+              </form>
+            </div>
+{% endblock %}

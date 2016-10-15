@@ -1,0 +1,123 @@
+{% load socialaccount %}
+<div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header login_modal_header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                    &times;</button>
+                <h2 class="modal-title" id="myModalLabel">
+                    Login to Your Account</h2>
+            </div>
+            <div class="modal-body login-modal">
+                <br />
+                <div class="clearfix">
+                </div>
+                <div class="logindiv" id='social-icons-conatainer'>
+                    <div class='modal-body-left'>
+                        <div class="form-group">
+                            <input type="text" id="username" placeholder="Enter User name or email" value=""
+                                class="form-control login-field">
+                            <i class="fa fa-user login-field-icon"></i>
+                        </div>
+                        <div class="form-group">
+                            <input type="password" id="login-pass" placeholder="Password" value="" class="form-control login-field">
+                            <i class="fa fa-lock login-field-icon"></i>
+                        </div>
+                        <a href="{% url 'account_login' %}" class="btn  modal-login-btn" style="background-color: #e5007e; color: #ffec00;">
+                            Login</a> 
+                            <a href="#" id="btnReset" class="login-link text-center">Lost your password?</a>
+                            <br />
+                        <div class="resetpassword" style="display:none;">
+                         <div class="form-group">
+                            <input type="text" id="resetEmail" placeholder="Eg:Test@gmail.com" value="" class="form-control login-field">
+                            <i class="fa fa-lock login-field-icon"></i>
+                        </div>
+                        <a href="#" class="btn  modal-login-btn" style="background-color: #e5007e; color: #ffec00;">
+                            Send reset password to email</a>
+                        </div>
+                    </div>
+                    <div class='modal-body-right'>
+                        <div class="modal-social-icons">
+                            {% providers_media_js %}
+                            <p><a href="{% provider_login_url "facebook" method="js_sdk" %}" class="btn btn-default facebook"><i class="fa fa-facebook modal-icons"></i>
+                                Sign In with Facebook </a></p>
+
+                            <p><a href="{% provider_login_url "twitter" %}" class="btn btn-default twitter"><i class="fa fa-twitter modal-icons">
+                                </i>Sign In with Twitter </a></p>
+                            <p><a href="{% provider_login_url "google" %}" class="btn btn-default google"><i class="fa fa-google-plus modal-icons">
+                                </i>Sign In with Google </a></p>
+                        </div>
+                    </div>
+                    <div id='center-line'>
+                        OR
+                    </div>
+                </div>
+                <div class="clearfix">
+                </div>
+                <div class="form-group modal-register-btn">
+                    <button id="btnRegiser" class="btn btn-default">
+                        New User? Sign up Here !</button>
+                </div>
+            </div>
+            <div class="clearfix">
+            </div>
+            <div class="modal-footer login_modal_footer">
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="register-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header login_modal_header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                    &times;</button>
+                <h2 class="modal-title" id="H1">
+                    Register your Account</h2>
+            </div>
+            <div class="modal-body login-modal">
+                <br />
+                <div class="clearfix">
+                </div>
+                <div class="logindiv" id='Div2'>
+                    <div class='modal-body-left'>
+                        <center>
+                            <div class="form-group">
+                                <input type="text" id="txtFirstname" placeholder="Enter First name" value="" class="form-control login-field">
+                            </div>
+                            <div class="form-group">
+                                <input type="text" id="txtLastName" placeholder="Enter Last name" value="" class="form-control login-field">
+                            </div>
+                            <div class="form-group">
+                                <input type="text" id="txtUserName" placeholder="Enter User name" value="" class="form-control login-field">
+                            </div>
+                    </div>
+                    <div class='modal-body-right'>
+                        <div class="form-group">
+                            <input type="text" id="txtEmail" placeholder="Enter Email" value="" class="form-control login-field">
+                        </div>
+                        <div class="form-group">
+                            <input type="password" id="txtPassword" placeholder="Enter New Password" value=""
+                                class="form-control login-field">
+                        </div>
+                        <div class="form-group">
+                            <input type="password" id="txtConformpassword" placeholder="Enter Confirm Password"
+                                value="" class="form-control login-field">
+                        </div>
+                    </div>
+                </div>
+                <div class="clearfix">
+                </div>
+                <center>
+                    <a href="#" class="btn  modal-login-btn" style="background-color: #e5007e; color: #ffec00;
+                        width: 200px;">Register</a></center>
+            </div>
+            <div class="clearfix">
+            </div>
+            <div class="modal-footer login_modal_footer">
+            </div>
+        </div>
+    </div>
+</div>

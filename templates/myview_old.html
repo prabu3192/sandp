@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+{% load staticfiles %}
+{% block head_title %}Welcome | {{ block.super }}{% endblock %}
+
+<style>
+  {% block style %}
+
+  .navbar-static-top {
+
+    background-color: #000000;
+    color:#FFFFFF;
+  }
+  .slide>img{
+    height: 80%;
+
+  }
+    .articlebody{
+        margin-top : 5%;
+    }
+
+  {% endblock %}
+
+</style>
+
+{% block content  %}
+
+<div class="row ">
+  <div class="col-md-8 slide">
+     {% if articles.image %}
+              <img  src="{{articles.image.url}}" alt="" class="img-responsive">
+     {% else %}
+              <img  src="{% static 'img/defautimg.jpg' %}" alt="" class="img-responsive">
+     {% endif %}
+    <div class="row">
+        <div class="col-md-7 ">
+          <h3>people news </h3>
+          <div class="media article">
+            <div class="media-body">
+               <h4 class="media-heading">
+                {% if slide %}
+                  {{ slide.titre }}{{ slide.contenu|safe }}
+                {% endif %}
+                {% if categorie %} 
+                  {{ articles.titre }}{{ articles.contenu|safe }}
+                {% endif %}
+              </h4>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-5 star">
+          {% for aricle in allArticls %}
+          <h4>{{ aricle.titre }}</h4>
+          <p>{{ aricle.contenu|safe }}</p>
+          {%endfor%}
+        </div>
+    </div>
+  </div>
+  <div class=" pub col-md-4">
+      {% for p in pub %}
+      <h4>{{ p.titre }}</h4>
+      <p>{{ p.contenu |safe}}</p>
+      {%endfor%}
+    </div>
+</div>
+
+{% endblock %}

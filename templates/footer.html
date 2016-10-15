@@ -1,0 +1,165 @@
+{% load staticfiles %}
+{% load thumbnail %}
+<!-- Footer -->
+<footer>
+    <div class="top-sec">
+      <div class="container ">
+        <div class="row match-height-container">
+          <div class="col-sm-6 subscribe-info wow fadeInDown animated" data-wow-delay="1s" data-wow-offset="40">
+            <div class="row">
+              <div class="col-sm-15">
+                <div class="f-title-starpeople">Stars People</div>
+                <p>Inaya Médias est membre du Groupe Inaya qui, grâce à ses capacités d’innovation hors normes, met en place des services inédits dans des secteurs variés, comme la téléphonie. INAYA MEDIAS à PARIS 8 (75008)</p>
+              </div>
+              <div class="col-sm-15">
+                <div class="f-title">S'INSCRIRE À LA NEWSLETTER</div>
+                <form class="form-inline" action="" method="post">
+                    {% csrf_token %}
+                    {{ formNews }}
+                  
+                  <button type="submit" class="btn"> <span class="ion-paper-airplane text-danger"></span> </button>
+                  <span>{{message}}</span>
+                </form>
+              </div>
+            </div>
+          </div>		
+          <div class="col-sm-6 subscribe-info wow fadeInDown animated" data-wow-delay="1s" data-wow-offset="40">
+            <div class="row">
+              <div class="col-sm-15">
+                <div class="f-title-suivez">SUIVEZ-NOUS SUR</div>
+                <div class="col-sm-15 f-social" style="text-align: left;padding-top:0em; margin-left: 2em;">
+            <ul class="list-inline">
+              <br><li> <a href="#"><span class="ion-social-twitter" style="color:white;"></span></a> </li>
+              <li> <a href="#"><span class="ion-social-facebook" style="color:white;"></span></a> </li>
+              <li> <a href="#"><span class="ion-social-instagram" style="color:white;"></span></a> </li>
+              <li> <a href="#"><span class="ion-social-google" style="color:white;"></span></a> </li>
+              <li> <a href="#"><span class="ion-social-linkedin" style="color:white;"></span></a> </li>
+            </ul>
+          </div>
+         </div>
+
+             <div class="col-sm-15">
+                <div class="f-title-suivez"><br>RECHERCHER</div>
+                <form class="form-inline" method="GET" action="{% url 'search' %}">
+                  <input type="text" class="form-control-suivez" id="article-name" placeholder="Latest Articles" name="q"  value='{{requste.GET.q}}'>
+                  <button type="submit" class="btn-suivez" style="display: inline-block;margin-bottom: 0;  font-weight: normal;text-align: center;vertical-align: middle;cursor: pointer;   background-image: none;border: 1px solid #e5007e;background: #ffffff;padding: 6px 12px;
+                    font-size: 14px;line-height: 1.42857143;margin-left: -2em;margin-top: -1em;"> <span class="ion-paper-airplane text-danger"></span> </button>
+                </form>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-4 recent-posts  wow fadeInDown animated" data-wow-delay="1s" data-wow-offset="40">
+            <div class="f-title-recentposts">recent posts</div>
+            <ul class="list-unstyled">
+              {% for lastarticle in lastArticles|slice:":3" %}
+              <li> <a href="{% url 'myview' lastarticle.id  %}">
+                <div class="row">
+                  <div class="col-sm-7">
+                    <div class="col-sm-12">
+                      <img class="img-thumbnail pull-left" src="{% thumbnail lastarticle.image 120x80  %}" img-responsive alt="Image doesn't not available"/>                    
+                      </div>
+                    </div>
+                  <div class="col-sm-9">
+                    <h4>{{ lastarticle.titre }}</h4>
+                    <div class="f-sub-info1">
+                      <div class="time-footer"><span class="ion-android-data icon"></span>{{lastarticle.publication_date|date:"M d Y"}}
+                        <div class="comments-footer"><span class="ion-chatbubbles icon"></span>{{lastarticle.nbComment}}</div>
+                      </div>
+                      
+                      <div class="stars"><span></span><span></span><span></span><span></span><span></span></div>
+                    </div>
+                  </div>
+                </div>
+                </a> </li>
+                {% endfor %}
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="btm-sec">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-16">
+            <div class="row">
+              <div class="col-sm-10 col-xs-16 f-nav wow fadeInDown animated" data-wow-delay="0.5s" data-wow-offset="10">
+                <ul class="list-inline ">
+                  <li> <a href="#"> MENTION LEGALES </a> </li>
+                  <li> <a href="#">CGU  </a> </li>
+                  <li> <a href="#"> PUBLICITE </a> </li>
+                  <li> <a href="#"> NOS APPLIS MOBILE </a> </li>
+                  <li> <a href="#"> ABONNEMENT </a> </li>
+                  <li> <a href="#"> PLAN DU SITE </a> </li>                  
+                  <li> <a href="{% url 'sendMail' %}"> CONTACTEZ-NOUS </a> </li>
+                </ul>
+              </div>
+              <div class="col-sm-5 col-xs-16 copyrights text-right wow fadeInDown animated" data-wow-delay="0.5s" data-wow-offset="10">© 2016 Stars People. ALL RIGHTS RESERVED</div>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!-- Footer end -->
+  <div id="create-account" class="white-popup mfp-with-anim mfp-hide">
+    <form role="form">
+      <h3>Create Account</h3>
+      <hr>
+      <div class="row">
+        <div class="col-sm-8">
+          <div class="form-group">
+            <input type="text" name="first_name" id="first_name" class="form-control" placeholder="First Name" tabindex="1">
+          </div>
+        </div>
+        <div class="col-sm-8">
+          <div class="form-group">
+            <input type="text" name="last_name" id="last_name" class="form-control" placeholder="Last Name" tabindex="2">
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <input type="text" name="display_name" id="display_name" class="form-control" placeholder="Display Name" tabindex="3">
+      </div>
+      <div class="form-group">
+        <input type="email" name="email" id="email" class="form-control " placeholder="Email Address" tabindex="4">
+      </div>
+      <div class="row">
+        <div class="col-sm-8">
+          <div class="form-group">
+            <input type="password" name="password" id="password" class="form-control " placeholder="Password" tabindex="5">
+          </div>
+        </div>
+        <div class="col-sm-8">
+          <div class="form-group">
+            <input type="password" name="password_confirmation" id="password_confirmation" class="form-control" placeholder="Confirm Password" tabindex="6">
+          </div>
+        </div>
+      </div>
+      <hr>
+      <div class="row">
+        <div class="col-sm-16">
+          <input type="submit" value="Register" class="btn btn-danger btn-block btn-lg" tabindex="7">
+        </div>
+      </div>
+    </form>
+  </div>
+  <div id="log-in" class="white-popup mfp-with-anim mfp-hide">
+    <form role="form">
+      <h3>Log In Your Account</h3>
+      <hr>
+      <div class="form-group">
+        <input type="text" name="access_name" id="access_name" class="form-control" placeholder="Name" tabindex="3">
+      </div>
+      <div class="form-group">
+        <input type="password" name="password" id="password" class="form-control " placeholder="Password" tabindex="4">
+      </div>
+      <hr>
+      <div class="row">
+        <div class="col-sm-16">
+          <input type="submit" value="Log In" class="btn btn-danger btn-block btn-lg" tabindex="7">
+        </div>
+      </div>
+    </form>
+  </div>
+

@@ -1,0 +1,21 @@
+{% load staticfiles i18n %}
+{% load thumbnail %}
+<div class="main-title-outer pull-left">
+  <div class="main-title">Horoscope</div>
+  <div class="span-outer"><span class="pull-right text-danger last-update"><span class="ion-android-data icon"></span>Last update: 3 days ago</span> </div>
+</div>
+<div class="row">
+  <div id="owl-lifestyle" class="owl-carousel owl-theme lifestyle pull-left">
+  	{% for horoscopeArticle in horoscopeArticles %}
+	<div class="item topic"> <a href="{% url 'myview' horoscopeArticle.id  %}"> <img class="img-thumbnail horoimg" src="{% thumbnail horoscopeArticle.image 300x132  %}" alt=""/>
+	  <h4>{{horoscopeArticle.titre}}</h4>
+	  <div class="text-danger sub-info-bordered remove-borders" style="color:#e5007e">
+		<div class="time"><span class="ion-android-data icon"></span>{{horoscopeArticle.publication_date|date:"M d Y"}}</div>
+		<div class="comments"><span class="ion-chatbubbles icon"></span>{{horoscopeArticle.nbComment}}</div>
+		<div class="stars"><span></span><span></span><span></span><span></span><span></span></div>
+	  </div>
+	  </a> </div>
+	{% endfor %}
+  </div>
+</div>
+<hr>

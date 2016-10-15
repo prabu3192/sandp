@@ -1,0 +1,112 @@
+ {% extends "home.html" %}
+ {% load crispy_forms_tags %}
+ {% load staticfiles i18n %}
+ 
+{% block style %}
+h1 {
+    border-bottom: 5px !important;
+	padding-bottom:5px;
+}
+{% endblock %}
+
+{% block topsec %}
+<div class="container">
+    <div class="page-header">
+      <h1>Section Topic Details </h1>
+	  {% block breadcrumb %}
+      <ol class="breadcrumb">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Pages</a></li>
+        <li class="active">Section Topic Details</li>
+      </ol>
+	  {% endblock %}
+    </div>
+  </div>
+{% endblock %}
+
+{% block articles %}
+	<!-- post details start -->
+	<div class="col-sm-16">
+	  <div class="row">
+	   {% block article_details %}
+		<div class="sec-topic col-sm-16  wow fadeInDown animated " data-wow-delay="0.5s">
+		  <div class="row">
+			<div class="col-sm-16">
+			{% block article_image %}
+				<img width="1000" height="606" alt="" src="{{articles.image.url}}" class="img-thumbnail">
+			{% endblock %}
+			</div>
+			<div class="col-sm-16 sec-info">
+			  <h3>{{articles.titre}}</h3>
+			  <div class="text-danger sub-info-bordered">
+				<div class="author"><span class="ion-person icon"></span>{{articles.titre}}</div>
+				<div class="time"><span class="ion-android-data icon"></span>{{ articles.timestamp|date:"M d Y" }}</div>
+				<div class="comments"><span class="ion-chatbubbles icon"></span>204</div>
+				<div class="stars"><span class="ion-ios7-star"></span><span class="ion-ios7-star"></span><span class="ion-ios7-star"></span><span class="ion-ios7-star"></span><span class="ion-ios7-star-half"></span></div>
+			  </div>
+			  <p>{{articles.contenu|safe}}</p>
+			  <hr>
+			</div>
+		  </div>
+		</div>
+		{% endblock %}
+		{% block comments_area %}
+		{% block comments %}
+		<div class="col-sm-16 comments-area">
+		  {% if nbComment != 0 %}
+		  <div class="main-title-outer pull-left">
+			<div class="main-title">commentaires</div>
+		  </div>
+		  <div class="opinion pull-left">
+		  	 {% for cmt in articleComments %}
+              
+			<div class="media"> 
+				<a href="#" class="pull-left"> <img alt="64x64" data-src="holder.js/64x64" class="media-object" style="width: 64px; height: 64px;" src="{% static 'images/comments/iconcomment.jpg' %}"> </a>
+			  <div class="media-body">
+				<div>
+				  <h4 class="media-heading">{{cmt.user}}</h4>
+				  <div class="time text-danger"><span class="ion-android-data icon"></span>Dec 9 2014</div>
+				</div>
+				  {{cmt.comment}}
+			  </div>
+			</div>  
+			{% endfor %}               
+
+		  </div>
+		  {% endif %}
+		</div>
+		{% endblock %}
+		{% block comment_form %}
+		<div class="col-sm-16">
+		  
+		  <div class="col-xs-16 wow zoomIn animated">
+        	{% if request.user.is_authenticated %}
+			<form action="" method="post" name="" class="comment-form">
+			  {% csrf_token %}
+			  <div class="row">
+				<div class="form-group col-sm-16">
+              	  {{ commentForm }}
+				</div>
+			  </div>
+			  <div class="form-group">
+				<button class="btn btn-danger" type="submit"> Submit</button>
+				<button class="btn btn-danger" type="reset">Cancel</button>
+			  </div>
+			</form>
+			{% else %}
+			<div class="main-title-outer pull-left">
+				<div class="main-title">
+					<a href="{% url 'account_login' %}?next={{request.path}}">Ajouter commentaire</a>
+				</div>
+		    </div>  
+            {% endif %}
+		  </div>
+		</div>
+		{% endblock %}
+		{% endblock %}
+	  </div>
+	</div>
+
+	<!-- post details end --> 
+{% endblock %}
+

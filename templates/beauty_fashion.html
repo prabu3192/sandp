@@ -1,0 +1,89 @@
+{% load i18n %}
+{% load thumbnail %}
+<!-- Beauty & Fashion start -->
+<div class="col-sm-16">
+<div class="row">
+  <div class="col-xs-16 col-sm-8  wow fadeInLeft animated science" data-wow-delay="0.5s" data-wow-offset="130">
+	<div class="main-title-outer pull-left">
+	  <div class="main-title">Beauty</div>
+	  <div class="span-outer"><span class="pull-right text-danger last-update"><span class="ion-android-data icon"></span>Last update: 2 days ago</span> </div>
+	</div>
+	<div class="row">
+	{% for beautyArticle in beautyArticles|slice:":1" %}
+		{% if forloop.first %}
+	  <div class="topic col-sm-16"> <a href="{% url 'myview' beautyArticle.id  %}"><img class=" img-thumbnail beautyimg-first" src="{% thumbnail beautyArticle.image 600x227  %}"  alt=""/>
+		<h3>{{beautyArticle.titre}}</h3>
+		<div class="text-danger sub-info-bordered " style="color:#e5007e">
+		  <div class="time"><span class="ion-android-data icon"></span>{{beautyArticle.publication_date|date:"M d Y"}}</div>
+		  <div class="comments"><span class="ion-chatbubbles icon"></span>{{beautyArticle.nbComment}}</div>
+		  <div class="stars"><span></span><span></span><span></span><span></span><span></span></div>
+		</div>
+		</a>
+		<p>{{beautyArticle.contenu|safe|truncatewords:"23"|linebreaks }}</p>
+	  </div>
+	  <div class="col-sm-16">
+		<ul class="list-unstyled  top-bordered ex-top-padding">
+		{% else %}
+		  <li> <a href="{% url 'myview' beautyArticle.id  %}">
+			<div class="row">
+			  <div class="col-lg-3 col-md-4 hidden-sm  "><img  alt="" src="{% thumbnail beautyArticle.image 76x76  %}" class="img-thumbnail pull-left beautyimg"> </div>
+			  <div class="col-lg-13 col-md-12">
+				<h4>{{beautyArticle.titre}}</h4>
+				<div class="text-danger sub-info" style="color:#e5007e">
+				  <div class="time"><span class="ion-android-data icon"></span>{{beautyArticle.publication_date|date:"M d Y"}}</div>
+				  <div class="comments"><span class="ion-chatbubbles icon"></span>{{beautyArticle.nbComment}}</div>
+				  <div class="stars"><span class="ion-ios7-star"></span><span class="ion-ios7-star"></span><span class="ion-ios7-star"></span><span class="ion-ios7-star"></span><span class="ion-ios7-star-half"></span></div>
+				</div>
+			  </div>
+			</div>
+			</a> </li>
+		{% endif %}
+		{%endfor%}
+		</ul>
+	  </div>
+	</div>
+  </div>
+  <div class="col-sm-8 col-xs-16 wow fadeInRight animated" data-wow-delay="0.5s" data-wow-offset="130">
+	<div class="main-title-outer pull-left">
+	  <div class="main-title">Fashion</div>
+	  <div class="span-outer"><span class="pull-right text-danger last-update"><span class="ion-android-data icon"></span>Last update: 2 days ago</span> </div>
+	</div>
+	<div class="row left-bordered">
+		{% for fashionArticle in fashionArticles|slice:":1" %}
+		{% if forloop.first %}
+	  <div class="topic col-sm-16"> <a href="{% url 'myview' fashionArticle.id  %}"> <img  class="img-thumbnail beautyimg-first" src="{% thumbnail fashionArticle.image 600x227  %}"  alt=""/>
+		<h3>{{fashionArticle.titre}}</h3>
+		<div class="text-danger sub-info-bordered" style="color:#e5007e">
+		  <div class="time"><span class="ion-android-data icon"></span>{{ fashionArticle.publication_date|date:"M d Y"}}</div>
+		  <div class="comments"><span class="ion-chatbubbles icon"></span>{{fashionArticle.nbComment}}</div>
+		  <div class="stars"><span></span><span></span><span></span><span></span><span></span></div>
+		</div>
+		</a>
+		<p>{{fashionArticle.contenu|safe|truncatewords:"23"|linebreaks }}</p>
+	  </div>
+	  <div class="col-sm-16">
+		<ul class="list-unstyled top-bordered ex-top-padding">
+		{% else %}
+		  <li> <a href="{% url 'myview' fashionArticle.id  %}">
+			<div class="row">
+			  <div class="col-lg-3 col-md-4 hidden-sm  "><img  alt="" src="{% thumbnail fashionArticle.image 76x76  %}" class="img-thumbnail pull-left beautyimg"> </div>
+			  <div class="col-lg-13 col-md-12">
+				<h4>{{ fashionArticle.titre }}</h4>
+				<div class="text-danger sub-info">
+				  <div class="time"><span class="ion-android-data icon"></span>{{ fashionArticle.publication_date|date:"M d Y"}}</div>
+				  <div class="comments"><span class="ion-chatbubbles icon"></span>{{fashionArticle.nbComment}}</div>
+				  <div class="stars"><span></span><span></span><span></span><span></span><span></span></div>
+				</div>
+			  </div>
+			</div>
+			</a> </li>
+		{% endif %}
+		{%endfor%}
+		</ul>
+	  </div>
+	</div>
+  </div>
+</div>
+<hr>
+</div>
+<!-- Beauty & Fashion end --> 

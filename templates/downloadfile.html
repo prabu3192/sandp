@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% block download %}
+<div>
+{% if request.user.is_authenticated %}
+<a href="{% static fileName %}">télécharger<b></b></a>
+{% endif %}
+</div>
+{% endblock %}
