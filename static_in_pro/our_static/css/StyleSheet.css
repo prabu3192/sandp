@@ -562,6 +562,19 @@ transform: rotate(+7deg);border: 2px solid #e5007e;
 }
 /*signup form End*/
 
+footer .logo-btm-sec {
+	background-color: #fff;
+	padding:5px 0px;
+	color:#000000;
+}
+.footer-logo{
+	width:100px;
+	background-color: #fff;
+    border: none;
+}
+.view-comment-form .form-group,.view-comment-form .form-control{
+	margin-left:0px;
+}
 @media screen and (max-width: 767px) {
 .magazinetop {
     top: 112px;
@@ -602,6 +615,11 @@ ul.nav.navbar-nav.text-uppercase.main-nav {
 }
 .navbar-inverse .dropdown-menu li:first-child a {
     padding-left: 25px !important;
+}
+
+.footer-logo{
+	width:100px;
+	height:100px;
 }
 
 }
