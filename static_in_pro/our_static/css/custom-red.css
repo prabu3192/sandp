@@ -468,9 +468,8 @@ blockquote p {
 	margin-top: -1.5em;
 }
 .header-toolbar ul.list-inline li {
-	padding-right: 1.7em;
+	padding-right: 6px;
 	padding-left: 6px;
-	margin-left: -3.2%;
 
 }
 /*4-2 TIME & DATE*/

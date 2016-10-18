@@ -259,7 +259,7 @@ h1
 
 ul.nav.navbar-nav.text-uppercase.main-nav {
     float: left;
-    margin-left: -3.1em;
+    margin-left: -3.7em;
     margin-top: 0.15em;
 }
 
@@ -570,9 +570,14 @@ footer .logo-btm-sec {
     border: none;
 	display:none;
 }
+
+
 @media screen and (min-width: 780px) {
 .accountlogin .modal-dialog {
 	width: 780px;
+}
+.header-toolbar .container{
+	margin-left: 50px;
 }
 }
 @media screen and (max-width: 767px) {
