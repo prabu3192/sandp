@@ -1642,7 +1642,6 @@ span.ion-ios7-search {
 	min-height: 38.5px;
 	box-shadow: none;
 	color: #e5007e;
-	margin-left: 1.5em;
 }
 .form-control:focus {
 	border-color: #ffc5bf;
@@ -2061,6 +2060,16 @@ footer .top-sec {
 footer .btm-sec {
 	background-color: #a0045a;
 }
+
+footer .f-title {
+    color: #fff;
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding: 10px 0;
+    margin-bottom: 5px;
+}
+
 footer .f-title-starpeople {
 	color: #fff;
 	font-size: 14px;
@@ -2115,7 +2124,7 @@ footer .ion-social-linkedin {
 
 footer p {
 	color: #fff;
-	margin-left: -0.3em;
+	padding-left: 0px;
 }
 footer .stars {
 	color: #b0b7bf;
@@ -2206,8 +2215,7 @@ footer .stars {
 .recent-posts .img-thumbnail {
 	background: white;
 	border: 1px solid #4f7396;
-	width: 80%;
-    height: 4.2em;
+
 }
 .recent-posts li a:hover .img-thumbnail {
 	border: 1px solid #4f7396;
@@ -2219,7 +2227,6 @@ footer .stars {
 }
 .recent-posts .list-unstyled li h4 {
 	color: #fff;
-	margin-left: -3.5em;
 
 }
 .btm-sec {
@@ -2253,8 +2260,6 @@ footer .stars {
 	line-height: 42px;
 	display: inline-block;
 	background: #e5007e;
-	margin-right: 1em;
-	margin-left: -0.5em;
 }
 .f-social ul li {
 	padding: 0;
@@ -2563,7 +2568,7 @@ footer .stars {
     .form-control-suivez {
     	margin-left: 0em; 
 	}
-	ul.list-inline li{
+	.btm-sec ul.list-inline li{
     	display: block;
     	text-align: center;
     	margin: 10px;

@@ -12,15 +12,13 @@ btn btn-default.login_modal_footer
 .form-group
 {
     position: relative;
-    margin-right: 0em;
-    margin-left: -3.6em;
+
 }
 
 .form-group-login
 {
     position: relative;
-    margin-right: 0.5em;
-    margin-left: -3.3em;
+
 }
 
 .form-group .login-field-icon
@@ -44,7 +42,6 @@ btn btn-default.login_modal_footer
 }
 .modal-register-btn
 {
-    margin: 4% 33% 2% 33%;
     width: 100%;
 }
 .login-modal input
@@ -65,10 +62,10 @@ btn btn-default.login_modal_footer
     float: right;
     width: 47%;
 }
-.login-link
+/* .login-link
 {
     padding: 0 20%;
-}
+} */
 .modal-social-icons
 {
     padding: 0 10%;
@@ -156,7 +153,6 @@ btn btn-default.login_modal_footer
     margin-bottom: 13px;
     color: #ffffff;
     background: #e5007e;
-    margin-left: 10em;
     margin-top: 0.5em;
 }
 #modal-launcher
@@ -312,9 +308,10 @@ ul.nav.navbar-nav.text-uppercase.main-nav {
 }
 
 .accountlogin #center-line {
-    position: absolute;
-    right: 270.7px;
-    margin-right: 3em;
+    position: relative;
+    right: -40px;
+    top: -170px;
+	float: right;
 }
 
 .f-sub-info1 .time {
@@ -323,19 +320,16 @@ ul.nav.navbar-nav.text-uppercase.main-nav {
     color: white;
 }
 
+
 .accountlogin #id_remember{
 	height:10px;
 }
-.accountlogin .modal-register-btn {
-    margin-left:45% !important;
-}
+
 .accountlogin .login-link {
-    padding: 0 26% !important;
     color: #e5007e;
 }
 .accountlogin .form-group label:not(:last-child){
 	width: 30% !important;
-    margin-left: 7em;
     color: #e5007e;
 }
 
@@ -417,12 +411,10 @@ label {
     max-width: 100%;
     margin-bottom: 0%;
     font-weight: bold;
-    margin-left: -0.6em;
     margin-top: 0em;
 }
 
 label.control-label.requiredField{
-    margin-left: 3.4em;
     color: #e5007e;
 }
 
@@ -440,7 +432,7 @@ form#signup_form.signup{
     padding: 1em;
 }
 
-p#error_1_id_first_name.help-block{
+/* p#error_1_id_first_name.help-block{
     margin-left: 1em;
 }
 p#error_1_id_last_name.help-block{
@@ -457,21 +449,18 @@ p#error_1_id_password1.help-block{
 }
 p#error_1_id_password2.help-block{
     margin-left: 1em;
-}
+} */
 
 label.control-label.requiredField (text){
-    margin-left: 3.4em;
     color: #e5007e;
 }
 
 div.form-group.has-error {
     position: relative;
-    margin-right: -10em;
-    margin-left: 1em;
+
 }
 
 form#signup_form label.control-label.requiredField {
-    margin-left: 1.4em;
     color: #e5007e;
 }
 
@@ -575,6 +564,17 @@ footer .logo-btm-sec {
 .view-comment-form .form-group,.view-comment-form .form-control{
 	margin-left:0px;
 }
+.navbar-logo{
+	width:100px;
+	background-color: #fff;
+    border: none;
+	display:none;
+}
+@media screen and (min-width: 780px) {
+.accountlogin .modal-dialog {
+	width: 780px;
+}
+}
 @media screen and (max-width: 767px) {
 .magazinetop {
     top: 112px;
@@ -609,6 +609,14 @@ footer .logo-btm-sec {
     position: absolute;
     top: 0px;
 }
+.navbar-fixed-top .navbar .navbar-logo{
+	display:block;
+    width: 80px;
+    height: 53px;
+	left: 140px;
+    position: absolute;
+    top: 0px;
+}
 
 ul.nav.navbar-nav.text-uppercase.main-nav {
     margin-left: -1em;
@@ -621,7 +629,21 @@ ul.nav.navbar-nav.text-uppercase.main-nav {
 	width:100px;
 	height:100px;
 }
+footer .f-social ul li{
+	margin:0px !important;
+}
 
+.accountlogin .form-group label:not(:last-child){
+	width: 90% !important;
+    color: #e5007e;
+}
+
+.accountlogin .form-group label[for ="id_remember"]{
+	width: 70% !important;
+}
+.accountlogin .form-group-login p.text-center{
+	text-align:left;
+}
 }
 @media screen and (max-width: 991px) {
 .navbar-inverse .dropdown-menu li:first-child a {
@@ -659,10 +681,14 @@ ul.nav.navbar-nav.text-uppercase.main-nav {
         margin-left: 0!important;
     }
     .header-toolbar ul.list-inline li{
-    padding-right: 0em;
-    padding-left: 0px;
+    padding-right: 6px;
+    padding-left: 6px;
     margin-left: 0px;
     }
 
+}
+
+form p{
+	padding-left:0px;
 }
     

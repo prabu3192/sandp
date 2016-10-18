@@ -58,13 +58,13 @@
 
  <p></p>
 
-  <div class="col-md-5 col-sm-12 hidden-sm hidden-xs business wow fadeInDown animated" data-wow-delay="1s" data-wow-offset="50">
+  <div class="col-md-5 col-sm-12 business wow fadeInDown animated" data-wow-delay="1s" data-wow-offset="50">
 	<div class="main-title-outer pull-left">  
 		         <div class="main-title">
                  Shopping</div>
 	</div>
 		{% for shopingArticle in shopingArticles %}
-	 	<div class="col-sm-12 hidden-sm hidden-xs  right-bordered">
+	 	<div class="col-sm-12  right-bordered">
 			<div id="vid-thumbs" class="owl-carousel">
 			  <div class="item">
 				<div class="vid-thumb-outer">
@@ -75,7 +75,7 @@
 					<img class="img-thumbnail latest-first img-responsive" src="{{lastarticle.image.url}}" alt="image does not avalable"/>
 				</div> -->
 				<div class="col-sm-12" style="width:100%;">
-				 <img src="{% thumbnail shopingArticle.image 236x480  %} " class="img-responsive" alt="image doesn't not available"/></div>
+				 <img src="{% thumbnail shopingArticle.image 236x480  %} " class="img-thumbnail img-responsive" alt="image doesn't not available"/></div>
 				</div>
 			  </div>
 			</div>

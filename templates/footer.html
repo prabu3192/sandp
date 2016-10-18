@@ -8,7 +8,7 @@
           <div class="col-sm-6 subscribe-info wow fadeInDown animated" data-wow-delay="1s" data-wow-offset="40">
             <div class="row">
               <div class="col-sm-15">
-                <div class="f-title-starpeople">Stars People</div>
+                <div class="f-title">Stars People</div>
                 <p>Inaya Médias est membre du Groupe Inaya qui, grâce à ses capacités d’innovation hors normes, met en place des services inédits dans des secteurs variés, comme la téléphonie. INAYA MEDIAS à PARIS 8 (75008)</p>
               </div>
               <div class="col-sm-15">
@@ -26,8 +26,8 @@
           <div class="col-sm-6 subscribe-info wow fadeInDown animated" data-wow-delay="1s" data-wow-offset="40">
             <div class="row">
               <div class="col-sm-15">
-                <div class="f-title-suivez">SUIVEZ-NOUS SUR</div>
-                <div class="col-sm-15 f-social" style="text-align: left;padding-top:0em; margin-left: 2em;">
+                <div class="f-title">SUIVEZ-NOUS SUR</div>
+                <div class="col-sm-15 f-social" style="text-align: left;padding-top:0em; margin-left:10px;">
             <ul class="list-inline">
               <br><li> <a href="#"><span class="ion-social-twitter" style="color:white;"></span></a> </li>
               <li> <a href="#"><span class="ion-social-facebook" style="color:white;"></span></a> </li>
@@ -38,34 +38,31 @@
           </div>
          </div>
 
-             <div class="col-sm-15">
-                <div class="f-title-suivez"><br>RECHERCHER</div>
+             <div class="col-sm-15" style="clear:both;">
+                <div class="f-title"><br>RECHERCHER</div>
                 <form class="form-inline" method="GET" action="{% url 'search' %}">
-                  <input type="text" class="form-control-suivez" id="article-name" placeholder="Latest Articles" name="q"  value='{{requste.GET.q}}'>
-                  <button type="submit" class="btn-suivez" style="display: inline-block;margin-bottom: 0;  font-weight: normal;text-align: center;vertical-align: middle;cursor: pointer;   background-image: none;border: 1px solid #e5007e;background: #ffffff;padding: 6px 12px;
-                    font-size: 14px;line-height: 1.42857143;margin-left: -2em;margin-top: -1em;"> <span class="ion-paper-airplane text-danger"></span> </button>
+                  <input type="text" class="form-control" id="article-name" placeholder="Latest Articles" name="q"  value='{{requste.GET.q}}'>
+                  <button type="submit" class="btn"> <span class="ion-paper-airplane text-danger"></span> </button>
                 </form>
               </div>
             </div>
           </div>
           <div class="col-sm-4 recent-posts  wow fadeInDown animated" data-wow-delay="1s" data-wow-offset="40">
-            <div class="f-title-recentposts">recent posts</div>
+            <div class="f-title">Recent posts</div>
             <ul class="list-unstyled">
               {% for lastarticle in lastArticles|slice:":3" %}
               <li> <a href="{% url 'myview' lastarticle.id  %}">
                 <div class="row">
-                  <div class="col-sm-7">
-                    <div class="col-sm-12">
+                  <div class="col-sm-4">
                       <img class="img-thumbnail pull-left" src="{% thumbnail lastarticle.image 120x80  %}" img-responsive alt="Image doesn't not available"/>                    
-                      </div>
                     </div>
-                  <div class="col-sm-9">
+                  <div class="col-sm-12">
                     <h4>{{ lastarticle.titre }}</h4>
-                    <div class="f-sub-info1">
-                      <div class="time-footer"><span class="ion-android-data icon"></span>{{lastarticle.publication_date|date:"M d Y"}}
-                        <div class="comments-footer"><span class="ion-chatbubbles icon"></span>{{lastarticle.nbComment}}</div>
+                    <div class="f-sub-info">
+                      <div class="time"><span class="ion-android-data icon"></span>{{lastarticle.publication_date|date:"M d Y"}}
+                        
                       </div>
-                      
+                      <div class="comments"><span class="ion-chatbubbles icon"></span>{{lastarticle.nbComment}}</div>
                       <div class="stars"><span></span><span></span><span></span><span></span><span></span></div>
                     </div>
                   </div>
