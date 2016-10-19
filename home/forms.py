@@ -23,7 +23,7 @@ class ArticleForm(forms.ModelForm):
         fields = ['titre', 'section', 'categorie', 'image', 'contenu']      
 
 class FormSouscriptionNews(forms.Form):
-   usermail=forms.EmailField(label ='Inscription Newsletter', widget=forms.TextInput(attrs={'class': 'form-control','id':'input-email','placeholder':'Type your e-mail adress'}))
+   usermail=forms.EmailField(label ='Inscription Newsletter', widget=forms.TextInput(attrs={'class': 'form-control','id':'input-email','placeholder':'Type recent post'}))
 
 class CommentForm(forms.Form):
    comment=forms.CharField(label ='', widget=forms.Textarea(attrs={'class': 'form-control','id':'message','placeholder':'votre commentaire','rows':'8'}))
