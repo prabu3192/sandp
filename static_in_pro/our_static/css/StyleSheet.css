@@ -624,11 +624,11 @@ footer .subscribe-info .form-inline .errorlist{
 
 .navbar-fixed-top .navbar .navbar-brand {
 	display:block;
-    width: 80px;
+    width: 75px;
     height: 65px;
 	left: 50px;
     position: absolute;
-    top: 0px;
+    top: -3px;
 }
 .navbar-fixed-top .navbar .navbar-logo{
 	display:block;
