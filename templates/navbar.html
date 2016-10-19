@@ -15,7 +15,7 @@
             <input type="text" placeholder="Rechercher*" id="searchInput" name="q" required="" class="form-control" value='{{requste.GET.q}}'/>
           </li>
           
-          <li><button class="btn btn-danger" id="navbarButton" type="submit" style="background: #ffec00 !important;color:#000;">Ok</button></li>
+          <li><button class="btn btn-danger" id="navbarButton" type="submit" style="background: #ffec00 !important;color:#000;margin-left: 2.5em;">Ok</button></li>
           
           {% if request.user.is_authenticated %}
           <li class="userstatus" style="float:right;padding-top:5px;">
@@ -24,11 +24,11 @@
           </li>
           {% else %}     
           <li style="float:right;">
-            <a href="{% url 'account_login' %}" class="btn btn-danger" style="background: #ffec00 !important;color:#000; border: 1px solid #e5007e; margin-right: 5em;margin-left: -13em;">Connexion</a></li>
+            <a href="{% url 'account_login' %}" class="btn btn-danger" style="background: #ffec00 !important;color:#000; border: 1px solid #e5007e; margin-right: 5em;margin-left: -13em;margin-top: 0.4em;">Connexion</a></li>
           {% endif %}
           
           </ul>
-			</form>
+        </form>
             </div>
             
           </div>
@@ -49,8 +49,8 @@
               <li> <a href="#"><span class="ion-social-twitter"></span></a> </li>
               <li> <a href="#"><span class="ion-social-facebook"></span></a> </li>
               <li> <a href="#"><span class="ion-social-instagram"></span></a> </li>
-              <li> <a href="#"><span class="ion-social-google"></span></a> </li>
-              <li> <a href="#"><span class="ion-social-linkedin"></span></a> </li>
+              <li> <a href="#"><span class="ion-social-pinterest"></span></a> </li>
+              <li> <a href="#"><span class="ion-social-youtube"></span></a> </li>
             </ul>
           </div>
       <div class="col-sm-11" style="padding-top: 45px; margin-left: -2em;">
@@ -107,7 +107,6 @@
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
               </div>
 			  <div><a class="navbar-brand" href="index-2.html">Stars People</a></div>
-			  <div><img class="img-thumbnail navbar-logo" src="{% static 'images/logo.png'  %}"></div>
               <div class="collapse navbar-collapse" id="navbar-collapse">
                 <ul class="nav navbar-nav text-uppercase main-nav ">
                   <li class="active"><a href="/">home</a></li>

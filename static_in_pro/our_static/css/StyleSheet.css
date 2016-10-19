@@ -557,9 +557,14 @@ footer .logo-btm-sec {
 	color:#000000;
 }
 .footer-logo{
-	width:100px;
+	width:79px;
 	background-color: #fff;
     border: none;
+}
+div.col-sm-5.col-md-16.col-xs-16.text-center.center-block {
+    margin-top: -5px;
+    font-size: 12px;
+    height: 1px;
 }
 .view-comment-form .form-group,.view-comment-form .form-control{
 	margin-left:0px;
@@ -570,7 +575,18 @@ footer .logo-btm-sec {
     border: none;
 	display:none;
 }
-
+footer .subscribe-info .form-inline label {
+	display: none;
+}
+footer .subscribe-info .form-inline .errorlist{
+	display: none;
+}
+.header .form-inline .errorlist{
+	display: none;
+}
+.accountlogin .form-group label[for ="id_remember"]{
+	font-weight: bold;
+}
 
 @media screen and (min-width: 780px) {
 .accountlogin .modal-dialog {
@@ -582,7 +598,7 @@ footer .logo-btm-sec {
 }
 @media screen and (max-width: 767px) {
 .magazinetop {
-    top: 112px;
+    top: 98px;
 }
 .magazinetop img{
 	width:34%;
@@ -631,8 +647,8 @@ ul.nav.navbar-nav.text-uppercase.main-nav {
 }
 
 .footer-logo{
-	width:100px;
-	height:100px;
+	width:79px;
+	height:51px;
 }
 footer .f-social ul li{
 	margin:0px !important;
@@ -647,7 +663,28 @@ footer .f-social ul li{
 	width: 70% !important;
 }
 .accountlogin .form-group-login p.text-center{
-	text-align:left;
+	text-align:center;
+}
+.toggle-search.pull-right{
+	 margin-right: 0px !important;
+}
+.accountlogin .modal-body-left
+{    width: 100%;
+border-right:0px;
+padding-right:0px;
+
+}
+.accountlogin .modal-body-left .form-group-login{
+	padding:0 10%;
+}
+.accountlogin .modal-body-left .form-group-login .modal-login-btn {
+	width:100%
+}
+.accountlogin .modal-body-right
+{    width: 100%;
+}
+footer .f-social .list-inline{
+        margin-left: -10px;
 }
 }
 @media screen and (max-width: 991px) {

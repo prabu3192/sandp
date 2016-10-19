@@ -6,6 +6,9 @@ h1 {
     border-bottom: 5px !important;
 	padding-bottom:5px;
 }
+.right-sec .top-margin{
+    margin-top: 0px;
+}
 {% endblock %}
 
 {% block topsec %}
@@ -14,7 +17,7 @@ h1 {
 {% block articles %}
 
   <div class="col-sm-15">
-   <h1 style="margin-left: -2.6em;">article</h1>
+   <h1>article</h1>
 
    <form action="" method="post" enctype="multipart/form-data">{% csrf_token %}
     {{ form.media }}

@@ -8,7 +8,7 @@
           <div class="col-sm-15"> <span class="ion-ios7-timer icon-news pull-left"></span>
             <ul id="js-news" class="js-hidden">
               {% for lastarticle in lastArticles %}
-              <li class="news-item"><a href="#">{{lastarticle.contenu |safe|truncatewords:"10"|linebreaks }}</a></li>
+              <li class="news-item"><a href="#">{{lastarticle.contenu |striptags|safe|truncatewords:"10"|linebreaks }}</a></li>
               {% endfor %}
             </ul>
           </div>
