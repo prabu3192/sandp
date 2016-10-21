@@ -26,8 +26,9 @@
 <body>
 <!-- wrapper start --> 
 <div class="wrapper">
+{% block navbar %}
 {% include 'navbar.html' %}
-
+{% endblock %}
 <div class="container ">
   {% block content %}
   
