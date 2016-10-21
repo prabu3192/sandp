@@ -1,4 +1,4 @@
-{% extends "home.html" %}
+ {% extends "home.html" %}
 {% load crispy_forms_tags %}
 
 {% block style %}
@@ -41,7 +41,7 @@ h1 {
 	<form method='POST' action=''>{% csrf_token %}
 	{{ form|crispy }}
 
-	<input class="btn btn-primary" type='submit' value='Validez' />
+	<input class="btn btn-primary btn-pink" type='submit' value='Validez' />
 
 	</form>
  </div>

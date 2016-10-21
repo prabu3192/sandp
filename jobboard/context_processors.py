@@ -14,6 +14,8 @@ def getFileName(request):
     
     lastArticles=Article.objects.filter(section__section_name='People news', status=1).order_by('-publication_date')[:5]
     sectionArticles=Section.objects.filter(is_SectionMenu=1)
+    for sectionArticle in sectionArticles:
+        sectionArticle.categorieArticles=Categorie.objects.filter(is_CategorieMenu=1,section=sectionArticle)
     categorieArticles=Categorie.objects.filter(is_CategorieMenu=1)
 
     #fileName=f.file

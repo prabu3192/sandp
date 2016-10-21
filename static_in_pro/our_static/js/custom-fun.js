@@ -178,9 +178,9 @@
 
          match: function() {
              $(".dropdown").hover(function() {
-                 $('.dropdown-menu', this).stop().fadeIn("slow");
+                 $('.dropdown-menu:first', this).stop().fadeIn("slow");
              }, function() {
-                 $('.dropdown-menu', this).stop().fadeOut("slow");
+                 $('.dropdown-menu:first', this).stop().fadeOut("slow");
              });
          },
      });
