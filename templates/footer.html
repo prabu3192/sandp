@@ -11,7 +11,7 @@
                 <div class="f-title">Stars People</div>
                 <p>Inaya Médias est membre du Groupe Inaya qui, grâce à ses capacités d’innovation hors normes, met en place des services inédits dans des secteurs variés, comme la téléphonie. INAYA MEDIAS à PARIS 8 (75008)</p>
               </div>
-              <div class="col-sm-15">
+              <div class="col-sm-15 footer-padding">
                 <div class="f-title">S'INSCRIRE À LA NEWSLETTER</div>
                 <form class="form-inline" action="" method="post">
                     {% csrf_token %}
@@ -38,7 +38,7 @@
           </div>
          </div>
 
-             <div class="col-sm-15" style="clear:both;">
+             <div class="col-sm-15 footer-padding" style="clear:both;">
                 <div class="f-title"><br>RECHERCHER</div>
                 <form class="form-inline" method="GET" action="{% url 'search' %}">
                   <input type="text" class="form-control" id="article-name" placeholder="Latest Articles" name="q"  value='{{requste.GET.q}}'>

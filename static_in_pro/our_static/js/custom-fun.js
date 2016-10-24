@@ -174,7 +174,7 @@
      /* -------------------------------------------------------------------------*
       * ADDING SLIDE UP AND ANIMATION TO DROPDOWN
       * -------------------------------------------------------------------------*/
-     enquire.register("screen and (min-width:767px)", {
+     enquire.register("screen and (min-width:991px)", {
 
          match: function() {
              $(".dropdown").hover(function() {

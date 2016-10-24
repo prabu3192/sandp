@@ -14,10 +14,10 @@
 		{% for lastarticle in lastArticles %}
 			{% if forloop.first %}
 		  <div class="col-md-8 col-sm-9 col-xs-16">
-		  	<div class="col-md-12">
+		  	<div class="">
 					<img class="img-thumbnail latest-first" src="{% thumbnail lastarticle.image 600x398  %}" img-responsive alt="image does not avalable"/>
 				</div>
-			<div class="topic col-md-12"> <a href="{% url 'myview' lastarticle.id  %}">		
+			<div class="topic"> <a href="{% url 'myview' lastarticle.id  %}">		
 			  <h3>{{ lastarticle.titre }}</h3>
 			  <div class="text-danger sub-info-bordered" style="color:#e5007e">
 				<div class="time"><span class="ion-android-data icon"></span>{{lastarticle.publication_date|date:"M d Y"}}</div>
@@ -62,17 +62,13 @@
                  Shopping</div>
 	</div>
 		{% for shopingArticle in shopingArticles %}
-	 	<div class="col-sm-12  right-bordered">
+	 	<div class="right-bordered">
 			<div id="vid-thumbs" class="owl-carousel">
 			  <div class="item">
 				<div class="vid-thumb-outer">
 				 <h4>{{shopingArticle.titre}}</h4>
 				 <div class="time"><span class="ion-android-data icon"></span>{{shopingArticle.publication_date|date:"M d Y"}}</div>
-
-		  	<!-- <div class="col-md-12">
-					<img class="img-thumbnail latest-first img-responsive" src="{{lastarticle.image.url}}" alt="image does not avalable"/>
-				</div> -->
-				<div class="col-sm-12" style="width:100%;">
+				<div>
 				 <img src="{% thumbnail shopingArticle.image 236x480  %} " class="img-thumbnail img-responsive" alt="image doesn't not available"/></div>
 				</div>
 			  </div>

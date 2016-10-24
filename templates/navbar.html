@@ -42,9 +42,9 @@
     <!-- header start -->
     <div class="container header">
       <div class="row">
-        <div class="col-sm-3 col-md-3 wow fadeInUpLeft animated"><a class="navbar-brand" href="\">Stars People</a></div>
-        <div class="col-sm-13 col-md-13 text-right">
-       <div class="col-sm-5 f-social hidden-xs " style="text-align: left;padding-top:45px;margin-left: -3em;">
+        <div class="col-sm-3 col-md-3 col-lg-3 wow fadeInUpLeft animated"><a class="navbar-brand" href="\">Stars People</a></div>
+        <div class="col-sm-16 col-md-16 col-lg-13 text-right">
+       <div class="col-sm-7 col-md-5 col-lg-5 f-social hidden-xs ">
             <ul class="list-inline">
               <li> <a href="#"><span class="ion-social-twitter"></span></a> </li>
               <li> <a href="#"><span class="ion-social-facebook"></span></a> </li>
@@ -53,8 +53,8 @@
               <li> <a href="#"><span class="ion-social-youtube"></span></a> </li>
             </ul>
           </div>
-      <div class="col-sm-11" style="padding-top: 45px; margin-left: -2em;">
-        <div class="col-sm-11 hidden-xs " >                
+      <div class="col-sm-9 col-md-11 col-lg-11 head-subscribe">
+        <div class="col-sm-11 col-md-11 col-lg-11 hidden-xs " >                
                 <form class="form-inline" action="" method="post">
                    {% csrf_token %}
                     {{ formNews }}
@@ -62,13 +62,11 @@
                   <span>{{message}}</span>
                 </form>
               </div>
-        <div class="col-sm-4">
+        <div class="col-sm-4 col-md-4 col-lg-4">
 		  <div class="hidden-xs">
-          <a  href="{% if request.user.is_authenticated %}
-                         /media/{{fileName.2.fileMagazine}}
-                  {% else %}
-                        {% url 'account_login' %}?next={{request.path}}
-                  {% endif %}" 
+          <a  href="{% if request.user.is_authenticated %} /media/{{fileName.2.fileMagazine}} 
+					{% else %} {% url 'account_login' %}?next={{request.path}}
+                    {% endif %}" 
                   style="margin-right: 1em;color:#e5007e;"><span class="blink-me">Telecharger magazine</span></a>
 
 		  </div>
@@ -80,9 +78,6 @@
     </div>
 
 	  </div>
-	  <div class="" style="float:right;width:200px;">
-		 
-		</div>
     </div>
 	        
     <!-- header end --> 
@@ -117,7 +112,7 @@
                      {% if categorieArticle.section.section_name == sectionArticle.section_name %}
                     <li><a href="{% url 'categories' categorieArticle.id %}"><span class="ion-ios7-arrow-right nav-sub-icn"></span>{{categorieArticle.categorie_nom}}</a></li>          
 						{% if sectionArticle.section_name == "Horoscope" %}
-							{% if forloop.counter == 5 %}
+							{% if forloop.counter == 2 %}
 								<li class="divider"></li>
 								<li class="dropdown dropdown-submenu"> <a  href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown">More options</a>
 								<ul class="dropdown-menu pull-right dropdown-menu-right" >

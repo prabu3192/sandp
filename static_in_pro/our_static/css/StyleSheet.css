@@ -257,14 +257,6 @@ h1
     top: 60px !important;
 }
 
-ul.nav.navbar-nav.text-uppercase.main-nav {
-    float: left;
-    margin-left: -3.7em;
-    margin-top: 0.15em;
-}
-
-
-
 
 .blink-me {
     -webkit-animation-name: blinker;
@@ -337,19 +329,6 @@ ul.nav.navbar-nav.text-uppercase.main-nav {
 	width: 45% !important;
 }
 
-.beautyimg {
-	width:4.750em;
-	height:4.75em;
-}
-
-.beautyimg-first {
-	width:37.5em;
-	height:14.188em;
-}
-.tabimg {
-	width:10.25em;
-	height:9.5em;	
-}
 
 h1 {
     border-bottom: none !important;
@@ -377,10 +356,6 @@ label.control-label.requiredField{
     color: #e5007e;
 }
 
-a.toggle-search.pull-right {
-
-}
-
 
 /*signup form start*/
 
@@ -390,25 +365,6 @@ form#signup_form.signup{
     width: 90%;
     padding: 1em;
 }
-
-/* p#error_1_id_first_name.help-block{
-    margin-left: 1em;
-}
-p#error_1_id_last_name.help-block{
-    margin-left: 1em;
-}
-p#error_1_id_username.help-block{
-    margin-left: 1em;
-}
-p#error_1_id_email.help-block{
-    margin-left: 1em;
-}
-p#error_1_id_password1.help-block{
-    margin-left: 1em;
-}
-p#error_1_id_password2.help-block{
-    margin-left: 1em;
-} */
 
 label.control-label.requiredField (text){
     color: #e5007e;
@@ -451,8 +407,7 @@ button#submitSignupForm {
 transform:rotate(-17deg); border: 2px solid #e5007e; 
 /* margin-right:-8.5em;margin-top:-6em;width: 61%; height: 2.5%; float: right; */
     top: 80px;
-right: 0px;
-
+	right: 0px;
     float: right;
     position: relative;
 }
@@ -505,9 +460,7 @@ transform: rotate(+7deg);border: 2px solid #e5007e;
     float: right;
 }
 /* Magazine End */
-.navbar .navbar-brand {
-	display:none;
-}
+
 /*signup form End*/
 
 footer .logo-btm-sec {
@@ -551,6 +504,34 @@ background-color: #e5007e;
 color: #ffec00;
 border-color:#e5007e;
 }
+.navbar .navbar-brand {
+	display:none;
+}
+
+form p{
+	padding-left:0px;
+}
+
+.navbar-brand {
+	margin-left: -4em;
+}
+ul.nav.navbar-nav.text-uppercase.main-nav {
+    float: left;
+    margin-left: -3.7em;
+    margin-top: 0.15em;
+}
+.head-subscribe{
+	margin-left: -3em;
+	padding-top: 45px;
+}
+
+.header .f-social{
+	text-align: left;
+	padding-top:45px;
+	margin-left: -3em;
+}
+
+
 @media screen and (min-width: 780px) {
 .accountlogin .modal-dialog {
 	width: 780px;
@@ -615,21 +596,7 @@ border-color:#e5007e;
 .dropdown-submenu .dropdown-menu {
 	display:block;
 }
-.magazinetop {
-    top: 98px;
-}
-.magazinetop img{
-	width:34%;
-}	
-    .magazineimg1{
-         top:0px;
-    }
-    .magazineimg2{
-         top:40px;
-     }
-    .magazineimg3{
-        top:-35px; 
-    }
+
 .subscribe-info .form-control {
 	display: inline-block;
 }
@@ -660,9 +627,7 @@ border-color:#e5007e;
 ul.nav.navbar-nav.text-uppercase.main-nav {
     margin-left: -1em;
 }
-.navbar-inverse .dropdown-menu li:first-child a {
-    padding-left: 25px !important;
-}
+
 
 .footer-logo{
 	width:79px;
@@ -708,13 +673,130 @@ footer .f-social .list-inline{
     display: block;
 }
 }
-@media screen and (max-width: 991px) {
-.navbar-inverse .dropdown-menu li:first-child a {
-    padding-left: 25px !important;
+
+@media (max-width: 386px) {
+.magazinetop {
+    top: 135px !important;
 }
+.navbar-brand {
+    width: 50%;
+	max-width:100%
+}	
+}
+@media (min-width: 768px) and (max-width: 992px) {
+.header .list-inline, .header-toolbar .list-inline {
+    margin-left: -5px;
+}
+.header .main-nav {
+    margin-left: 0px;
 }
 
-@media screen and (max-width: 760px) {
+}
+@media (min-width: 1200px) {
+ul.nav.navbar-nav.text-uppercase.main-nav{
+	margin-right: -20px;
+    margin-left: -62px;
+}
+.footer-padding{
+margin-top:-5px;	
+}
+}
+@media (max-width: 992px) {
+	
+.magazinetop {
+    top: 98px;
+}
+.magazinetop img{
+	width:34%;
+}	
+    .magazineimg1{
+         top:0px;
+    }
+    .magazineimg2{
+         top:40px;
+     }
+    .magazineimg3{
+        top:-35px; 
+    }	
+.navbar-nav .open .dropdown-menu {
+    position: static;
+    float: none;
+    width: auto;
+    margin-top: 0;
+    background-color: transparent;
+    border: 0;
+    box-shadow: none;
+}
+.open {
+    background: #e74c3c;
+}
+.open .dropdown-toggle {
+    background: #3d566e !important;
+}
+
+.navbar-nav>li>a {
+    padding: 12px 10px;
+    font-size: 12px;
+}
+.navbar-brand{
+	margin-left:0px;
+}	
+.head-subscribe{
+	margin-left: 0px;
+	padding-top: 0px;
+}
+.header .f-social{
+	text-align: left;
+	padding-top:20px;
+	margin-left: 0px;
+}
+.header .text-right{
+	text-align:left;
+}
+    .navbar-header {
+        float: none;
+    }
+    .navbar-left,.navbar-right {
+        float: none !important;
+    }
+    .navbar-toggle {
+        display: block;
+    }
+    .navbar-fixed-top {
+		top: 0;
+		border-width: 0 0 1px;
+	}
+    .navbar-collapse.collapse {
+        display: none!important;
+    }
+    .navbar-nav {
+        float: none!important;
+		margin-top: 7.5px;
+	}
+	.navbar-nav>li {
+        float: none;
+    }
+    .navbar-nav>li>a {
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+    .collapse.in{
+  		display:block !important;
+	}
+	
+	.nav-icn {
+    float: right;
+    margin-right: 10px;
+}
+.nav li {
+    border-bottom: 1px solid #44617d;
+}
+
+ul.nav.navbar-nav.text-uppercase.main-nav {
+    margin-left: -1em;
+}
+}
+@media screen and (max-width: 768px) {
     a.navbar-brand {
         margin-left: 0em;
 
@@ -750,8 +832,41 @@ footer .f-social .list-inline{
     }
 
 }
+@media (max-width: 760px) {
+	.list-unstyled li a img {
+	    margin-right: 10px;
+	    width: 20%;
+    }
+    input#input-email.form-control {
+    	/*width: 40%;
+    	margin-left: 0!important;
+    	margin-right: 0!important;*/
+    }
+    img.img-thumbnail.pull-left{
+    	margin-right: 10px;
+	    width: 20%;
+    }
+    .time-footer {
+    	margin-left: 0em;
+    }
+    .form-control-suivez {
+    	margin-left: 0em; 
+	}
+	.btm-sec ul.list-inline li{
+    	display: block;
+    	text-align: center;
+    	margin: 10px;
+	}
+	.btm-sec .list-inline li a {
+		font-size: 1em;
+	}
+	div.col-sm-5.col-xs-16.copyrights.text-right.wow.fadeInDown.animated.animated{
+		text-align: center!important;
+		padding: 10px 0;
+	}
 
-form p{
-	padding-left:0px;
+	.navbar-inverse .navbar-nav li a{
+		margin-left: 4px;
+	}
 }
     
