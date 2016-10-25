@@ -192,13 +192,26 @@ h1
 }
 
 /* floating box style */
+
+.floating-form:hover{
+	right: 0px;
+}
+
+.contact-opener:hover .floating-form{
+	right: 0px;
+}
+.floating-body:hover .floating-form{
+	right: 0px;
+}
+
+
 .floating-form {
     max-width: 300px;
     padding: 30px 30px 10px 30px;
     font: 13px Arial, Helvetica, sans-serif;
     background: #fdfdfd;
     border: 1px solid #fdfdfd;
-    right: 10px;
+    right: -202px;
     position: fixed;
 	z-index:100;
     box-shadow: -2px -0px 8px rgba(43, 33, 33, 0.06);
@@ -206,12 +219,16 @@ h1
     -webkit-box-shadow:  -2px -0px 8px rgba(43, 33, 33, 0.06);
     border: 0.5px solid #fdfdfd;
 
+	-webkit-transition-duration: 0.5s;
+	-moz-transition-duration: 0.5s;
+	-o-transition-duration: 0.5s;
+	transition-duration: 0.5s;
 
 
 	}
 .contact-opener {
     position: absolute;
-    left: -88px;
+    left: -84px;
     transform: rotate(-90deg);
     top: 75px;
     background-color: #e5007e;
