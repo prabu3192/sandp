@@ -548,6 +548,16 @@ ul.nav.navbar-nav.text-uppercase.main-nav {
 	margin-left: -3em;
 }
 
+.mega-menu {
+    min-width: 514px !important;
+}
+.mega-sub{
+	min-height:auto;
+	margin-right:0px;
+}
+.mega-sub a{
+	padding-right:0px;
+}
 
 @media screen and (min-width: 780px) {
 .accountlogin .modal-dialog {

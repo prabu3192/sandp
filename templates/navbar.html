@@ -107,19 +107,27 @@
                   <li class="active"><a href="/">home</a></li>
                   {% for sectionArticle in sectionArticles %}
               <li class="dropdown"> <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown">{{sectionArticle.section_name}}<span class="ion-ios7-arrow-down nav-icn"></span></a>    
-                  <ul class="dropdown-menu text-capitalize" role="menu">
+                  <ul class="dropdown-menu text-capitalize {% if sectionArticle.section_name == 'Horoscope' %} mega-menu dropdown-menu-large dropdown-menu-right row {% endif %}" role="menu">
                     {% for categorieArticle in sectionArticle.categorieArticles %}
                      {% if categorieArticle.section.section_name == sectionArticle.section_name %}
-                    <li><a href="{% url 'categories' categorieArticle.id %}"><span class="ion-ios7-arrow-right nav-sub-icn"></span>{{categorieArticle.categorie_nom}}</a></li>          
 						{% if sectionArticle.section_name == "Horoscope" %}
-							{% if forloop.counter == 2 %}
-								<li class="divider"></li>
-								<li class="dropdown dropdown-submenu"> <a  href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown">More options</a>
-								<ul class="dropdown-menu pull-right dropdown-menu-right" >
+							{% if forloop.first %}								
+								 <div class="col-md-4">
+								<ul class="mega-sub">
 							{% endif %}
-							{% if forloop.last %}
+
+						{% endif %}
+						<li><a href="{% url 'categories' categorieArticle.id %}"><span class="ion-ios7-arrow-right nav-sub-icn"></span>{{categorieArticle.categorie_nom}}</a></li>          
+						{% if sectionArticle.section_name == "Horoscope" %}
+						{% if forloop.counter|divisibleby:"3" and  not forloop.last%}
+								</ul>
+								 </div>
+								 <div class="col-md-4">
+								<ul class="mega-sub">
+							{% endif %}
+						{% if forloop.last %}
 									</ul>
-								 </li>
+								 </div>
 							{% endif %} 
 						{% endif %}
 				   {% endif %}
