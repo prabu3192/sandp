@@ -79,7 +79,7 @@
 {% block content  %}
 
 <div class="row ">
-  <div class="col-md-8 slide">
+  <div class="col-md-6 slide">
 
       <div id="myCarousel" class="carousel slide slider" data-ride="carousel">
 
@@ -133,7 +133,7 @@
         </div>
         {%endfor%}
       </div>
-      <div class="col-md-5 star">
+      <div class="col-md-4 star">
         {% for n in nouvo %}
         <a href="{% url 'myview' n.id 'nouvo'  %}" ><h4>{{ n.titre }}</h4></a>
         <p>{{ n.contenu|safe }}</p>

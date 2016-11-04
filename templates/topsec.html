@@ -2,23 +2,23 @@
   <!-- top sec start -->
       <!-- hot news end --> 
       <!-- banner outer start -->
-      <div class="col-sm-16 hot-news hidden-xs">
+      <div class="col-md-12 hot-news hidden-xs">
       {% block latest_news %}
         <div class="row">
-          <div class="col-sm-15"> <span class="ion-ios7-timer icon-news pull-left"></span>
+          <div class="col-md-11"> <span class="ion-ios7-timer icon-news pull-left"></span>
             <ul id="js-news" class="js-hidden">
               {% for lastarticle in lastArticles %}
               <li class="news-item"><a href="#">{{lastarticle.contenu |striptags|safe|truncatewords:"10"|linebreaks }}</a></li>
               {% endfor %}
             </ul>
           </div>
-          <div class="col-sm-1 shuffle text-right"><a href="#"><span class="ion-shuffle"></span></a></div>
+          <div class="col-md-1 shuffle text-right"><a href="#"><span class="ion-shuffle"></span></a></div>
         </div>
         {% endblock %}
       </div>
-      <div  class="col-sm-16 banner-outer wow fadeInLeft animated" data-wow-delay="1s" data-wow-offset="50">
+      <div  class="col-sm-12 banner-outer wow fadeInLeft animated" data-wow-delay="1s" data-wow-offset="50">
         <div class="row">
-          <div class="col-sm-16 col-md-11 col-lg-11"> 
+          <div class="col-sm-12 col-md-6 col-lg-8"> 
             
             <!-- carousel start -->
 
@@ -26,10 +26,10 @@
 			{% include "home_slide.html" %}
 			{% endblock %}
           </div>
-          <div class="col-sm-6 col-md-6 col-lg-5 hidden-sm hidden-xs">
+          <div class="col-md-4 col-lg-4 hidden-sm hidden-xs">
             <div class="row">
               
-              <div class="col-md-16 col-lg-16">
+              <div class="col-md-12 col-lg-12">
                 <div class="row">
 				{% block advertisment1 %}
         {% for PubArticle in PubArticles %}

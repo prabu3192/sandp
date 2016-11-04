@@ -260,13 +260,13 @@
 
      });
 
-     $("#vid-thumbs").owlCarousel({
+/*      $("#vid-thumbs").owlCarousel({
          navigation: false,
          pagination: true,
          slideSpeed: 300,
          paginationSpeed: 400,
          singleItem: true,
-     });
+     }); */
      $("#owl-lifestyle").owlCarousel({
          autoPlay: false, //Set AutoPlay to 3 seconds
          navigation: true,

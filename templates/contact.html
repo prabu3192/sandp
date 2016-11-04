@@ -26,10 +26,10 @@ h1 {
 
 {% block leftsec %}
 <!-- left sec start -->
-<div class="col-md-8 col-sm-8">
+<div class="col-md-6 col-sm-8">
 <div class="row">
 {% block articles %}
-<div class="col-sm-15">
+<div class="col-sm-11">
 
 		    {% for message in messages %}
 		     <h4{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</h4>

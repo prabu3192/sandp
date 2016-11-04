@@ -26,7 +26,7 @@
 {% block content  %}
 
 <div class="row ">
-  <div class="col-md-8 slide">
+  <div class="col-md-6 slide">
      {% if articles.image %}
               <img  src="{{articles.image.url}}" alt="" class="img-responsive">
      {% else %}
@@ -48,7 +48,7 @@
             </div>
           </div>
         </div>
-        <div class="col-md-5 star">
+        <div class="col-md-4 star">
           {% for aricle in allArticls %}
           <h4>{{ aricle.titre }}</h4>
           <p>{{ aricle.contenu|safe }}</p>

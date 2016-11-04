@@ -612,7 +612,7 @@ ul.nav.navbar-nav.text-uppercase.main-nav {
 	display:none;
 }
 .dropdown-menu-right{
-	display:block;
+	display:none;
 }
 .dropdown-submenu .pull-right{
 	float:none !important;
@@ -717,7 +717,9 @@ footer .f-social .list-inline{
 .header .main-nav {
     margin-left: 0px;
 }
-
+.mega-menu {
+    min-width: 100% !important;
+}
 }
 @media (min-width: 1200px) {
 ul.nav.navbar-nav.text-uppercase.main-nav{

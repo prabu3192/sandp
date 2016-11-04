@@ -453,8 +453,8 @@ blockquote p {
 	font-weight: 600;
 	color: #fff;
 	border-bottom: 1px solid #ecf0f1;
-	padding-top: 4em;
-	padding-bottom: 2em;
+	padding-top: 10px;
+	padding-bottom: 10px;
 	background-color:#e5007e;
 }
 .header-toolbar a {
@@ -834,9 +834,8 @@ blockquote p {
 	margin-right: -1.3em;
 }
 
-.toggle-search.pull-right {
+.toggle-search{
 	color: #e5007e;
-    margin-right: -2em;
     margin-top: 0.2em;
     padding-top: 0em;
     border: 2px solid #e74c3c;
@@ -2481,7 +2480,6 @@ footer .stars {
 .owl-item img {
 	display: block;
 	max-width: 100%;
-	height: auto;
 }
 .social a {
 	font-size: 9px;

@@ -3,34 +3,31 @@
 {% load thumbnail %}
   <!-- header toolbar start -->
   <div class="header-toolbar">
-    <div class="container">
+    <div class="container-fluid">
       <div class="row">
-        <div class="col-md-16 text-uppercase">
+        <div class="col-md-12 text-uppercase">
           <div class="row">
-            <div class="col-sm-16 col-xs-16">
-        <form method="GET" action="{% url 'search' %}">
-          <ul id="inline-popups" class="list-inline">
-          <li class="hidden-xs">Rechercher dans Stars &amp; People</li>
-          <li>
-            <input type="text" placeholder="Rechercher*" id="searchInput" name="q" required="" class="form-control" value='{{requste.GET.q}}'/>
-          </li>
-          
-          <li><button class="btn btn-danger" id="navbarButton" type="submit" style="background: #ffec00 !important;color:#000;">Ok</button></li>
-          
-          {% if request.user.is_authenticated %}
-          <li class="userstatus" style="float:right;padding-top:5px;">
-          <a href="#"><b>Bonjour </b>{{ request.user}}</a><br/>
-          <a href="{% url 'account_logout' %}">Se déconnecter</a>
-          </li>
-          {% else %}     
-          <li style="float:right;">
-            <a href="{% url 'account_login' %}" class="btn btn-danger" style="background: #ffec00 !important;color:#000; border: 1px solid #e5007e; margin-right: 5em;margin-left: -13em;margin-top: 0.4em;">Connexion</a></li>
-          {% endif %}
-          
-          </ul>
-        </form>
+            <div class="col-lg-2 col-md-3 col-sm-4 hidden-xs header-title-text">
+			    <div class="hidden-xs">Rechercher dans Stars &amp; People</div>
             </div>
-            
+            <div class="col-lg-8 col-md-7 col-sm-5 col-xs-9">
+			<form class="form-inline" method="GET" action="{% url 'search' %}">
+				<input type="text" placeholder="Rechercher*" id="searchInput" name="q" required="" class="form-control" value='{{requste.GET.q}}'/>
+				<button class="btn btn-danger" id="navbarButton" type="submit" style="background: #ffec00 !important;color:#000;">Ok</button>
+			</form>
+			</div>
+			<div class="col-lg-2 col-md-2 col-sm-3 col-xs-3">
+			  {% if request.user.is_authenticated %}
+			  <div class="userstatus" style="float:right;padding-top:5px;">
+			  <a href="#"><b>Bonjour </b>{{ request.user}}</a><br/>
+			  <a href="{% url 'account_logout' %}">Se déconnecter</a>
+			  </div>
+			  {% else %}     
+			  <div>
+				<a href="{% url 'account_login' %}" class="btn btn-danger" style="background: #ffec00 !important;color:#000; border: 1px solid #e5007e;">Connexion</a>
+			  </div>
+			  {% endif %}
+			</div>
           </div>
         </div>
       </div>
@@ -40,11 +37,11 @@
    <!-- sticky header start -->
   <div class="sticky-header"> 
     <!-- header start -->
-    <div class="container header">
+    <div class="container-fluid header">
       <div class="row">
-        <div class="col-sm-3 col-md-3 col-lg-3 wow fadeInUpLeft animated"><a class="navbar-brand" href="\">Stars People</a></div>
-        <div class="col-sm-16 col-md-16 col-lg-13 text-right">
-       <div class="col-sm-7 col-md-5 col-lg-5 f-social hidden-xs ">
+        <div class="col-sm-4 col-md-3 col-lg-2 wow fadeInUpLeft animated"><a class="navbar-brand" href="\">&npsb;</a></div>
+
+       <div class="col-md-3 col-lg-3 f-social hidden-xs ">
             <ul class="list-inline">
               <li> <a href="#"><span class="ion-social-twitter"></span></a> </li>
               <li> <a href="#"><span class="ion-social-facebook"></span></a> </li>
@@ -53,8 +50,8 @@
               <li> <a href="#"><span class="ion-social-youtube"></span></a> </li>
             </ul>
           </div>
-      <div class="col-sm-9 col-md-11 col-lg-11 head-subscribe">
-        <div class="col-sm-11 col-md-11 col-lg-11 hidden-xs " >                
+
+        <div class="col-md-4 col-lg-4 hidden-xs header-news-form " >                
                 <form class="form-inline" action="" method="post">
                    {% csrf_token %}
                     {{ formNews }}
@@ -62,7 +59,7 @@
                   <span>{{message}}</span>
                 </form>
               </div>
-        <div class="col-sm-4 col-md-4 col-lg-4">
+        <div class="col-sm-4 col-md-3 col-lg-3 header-user-status">
 		  <div class="hidden-xs">
           <a  href="{% if request.user.is_authenticated %} /media/{{fileName.2.fileMagazine}} 
 					{% else %} {% url 'account_login' %}?next={{request.path}}
@@ -73,35 +70,25 @@
 		  <div>
 		  </div>
         </div> 
-       </div>
-      
-    </div>
+
 
 	  </div>
     </div>
 	        
     <!-- header end --> 
-	<!-- magazine start-->
-	<div class="magazinetop">
-	  {% for f in fileName %} 
-	  <div class="top-right-box">
-	  <img class="{% cycle 'magazineimg1' 'magazineimg2' 'magazineimg3' %} img-responsive " src="{% thumbnail f.image 85x111 %}" alt="image doesn't avilable"/>
-	  </div>
-	  {% endfor %}
-	</div>
-	<!-- magazine end-->	  
+	  
     <!-- nav and search start -->
     <div class="nav-search-outer">
                 <!-- nav start -->
                 <nav class="navbar navbar-inverse" role="navigation">
-        <div class="container">
+        <div class="container-fluid">
           <div class="row">
-            <div class="col-sm-16"> 
-			<a href="javascript:;" class="toggle-search pull-right"><span class="ion-ios7-search"></span></a>
+            <div class="col-xs-12 col-lg-12"> 
+			  <a href="javascript:;" class="toggle-search pull-right"><span class="ion-ios7-search"></span></a>
               <div class="navbar-header">
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
               </div>
-			  <div><a class="navbar-brand" href="index-2.html">Stars People</a></div>
+			  <div><a class="navbar-brand" href="index-2.html">&nbsp;</a></div>
               <div class="collapse navbar-collapse" id="navbar-collapse">
                 <ul class="nav navbar-nav text-uppercase main-nav ">
                   <li class="active"><a href="/">home</a></li>
@@ -139,7 +126,10 @@
                                                   
                 </ul>
               </div>
-            </div>
+            
+			</div>
+
+			</div>
           </div>
         </div>
         <!-- nav end -->

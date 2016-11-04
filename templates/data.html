@@ -4,7 +4,7 @@
   <div class="container ">
     <div class="row "> 
       <!-- left sec start -->
-      <div class="col-md-11 col-sm-11">
+      <div class="col-md-6 col-sm-8">
         <div class="row"> 
 			{% block latest_news %}
 			{% include "latest_news.html" %}
@@ -16,7 +16,7 @@
       </div>
       <!-- left sec end --> 
 	  <!-- right sec start -->
-	  <div class="col-sm-5 hidden-xs right-sec">
+	  <div class="col-sm-4 hidden-xs right-sec">
 		  {% block right_sec %}
 		  {% include "home_right_sec.html" %}
 		  {% endblock %}
@@ -25,7 +25,7 @@
     </div>
 	<div class="row">
 		<!-- Horoscope start-->
-		<div class="col-sm-16 wow fadeInUp animated " data-wow-delay="0.5s" data-wow-offset="100">
+		<div class="col-sm-12 wow fadeInUp animated " data-wow-delay="0.5s" data-wow-offset="100">
 		{% block horoscope %}
 		{% include "horoscope.html" %}
 		{% endblock %}

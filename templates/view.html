@@ -29,17 +29,17 @@ h1 {
 
 {% block articles %}
 	<!-- post details start -->
-	<div class="col-sm-16">
+	<div class="col-sm-12">
 	  <div class="row">
 	   {% block article_details %}
-		<div class="sec-topic col-sm-16  wow fadeInDown animated " data-wow-delay="0.5s">
+		<div class="sec-topic col-sm-12  wow fadeInDown animated " data-wow-delay="0.5s">
 		  <div class="row">
-			<div class="col-sm-16">
+			<div class="col-sm-12">
 			{% block article_image %}
 				<img width="1000" height="606" alt="" src="{{articles.image.url}}" class="img-thumbnail">
 			{% endblock %}
 			</div>
-			<div class="col-sm-16 sec-info">
+			<div class="col-sm-12 sec-info">
 			  <h3>{{articles.titre}}</h3>
 			  <div class="text-danger sub-info-bordered">
 				<div class="author"><span class="ion-person icon"></span>{{articles.titre}}</div>
@@ -55,7 +55,7 @@ h1 {
 		{% endblock %}
 		{% block comments_area %}
 		{% block comments %}
-		<div class="col-sm-16 comments-area">
+		<div class="col-sm-12 comments-area">
 		  {% if nbComment != 0 %}
 		  <div class="main-title-outer pull-left">
 			<div class="main-title">commentaires</div>
@@ -80,14 +80,14 @@ h1 {
 		</div>
 		{% endblock %}
 		{% block comment_form %}
-		<div class="col-sm-15 col-md-15">
+		<div class="col-sm-11 col-md-11">
 		  
-		  <div class="view-comment-form col-xs-15 wow zoomIn animated">
+		  <div class="view-comment-form col-xs-11 wow zoomIn animated">
         	{% if request.user.is_authenticated %}
 			<form action="" method="post" name="" class="comment-form">
 			  {% csrf_token %}
 			  <div class="row">
-				<div class="col-sm-16">
+				<div class="col-sm-12">
               	  {{ commentForm|crispy }}
 				  <div class="form-group">
 					<button class="btn btn-danger" type="submit"> Submit</button>

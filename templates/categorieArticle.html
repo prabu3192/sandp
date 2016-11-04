@@ -21,17 +21,17 @@ h1 {
 {% endblock %}
  
 {% block articles %}
-<div class="col-sm-16">
+<div class="col-sm-12">
     <div class="row">
      {% block article_details %}
-    <div class="sec-topic col-sm-16  wow fadeInDown animated " data-wow-delay="0.5s">
+    <div class="sec-topic col-sm-12  wow fadeInDown animated " data-wow-delay="0.5s">
       <div class="row">
       {% for articleCategorie in articleCategories%}
-      <div class="col-md-8">
-      <div class="col-sm-16">
-          <img class="img-thumbnail img-responsive" src="{% thumbnail articleCategorie.image 600x398  %}"  alt="image does not avalable"/>
+      <div class="col-md-6">
+      <div class="col-sm-12">
+          <img class="img-thumbnail img-responsive cat-thumb-img" src="{{articleCategorie.image.url}}"  alt="image does not avalable"/>
       </div>
-      <div class="col-sm-16">
+      <div class="col-sm-12">
         <h3>{{articleCategorie.titre}}</h3>
         <div class="text-danger sub-info-bordered">
         <div class="author"><span class="ion-person icon"></span>{{ articleCategorie.auteur}}</div>
