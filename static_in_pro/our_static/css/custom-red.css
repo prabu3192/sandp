@@ -394,7 +394,7 @@ blockquote p {
 }
 
 .top-margin {
-	margin-top: 45px;
+	margin-top: 10px;
 }
 .bordered {
 	border: 1px solid #ededed;
@@ -831,7 +831,7 @@ blockquote p {
 	line-height: 55px;
 	text-align: center;
 	font-size: 20px;
-	margin-right: -1.3em;
+	margin-right: 10px;
 }
 
 .toggle-search{
@@ -1849,30 +1849,8 @@ table-bordered th, .table-bordered td {
 .rss:hover {
 	background: #ed802e;
 }
-.twitter:hover {
-	background: #45b0e3;
-}
-.facebook:hover {
-	background: #3a5898;
-}
-.youtube:hover {
-	background: #ce342c;
-}
-.vimeo:hover {
-	background: #42b1df;
-}
-.dribbble:hover {
-	background: #ea4c89;
-}
-.googleplus:hover {
-	background: #34352f;
-}
-.pinterest:hover {
-	background: #c82128;
-}
-.instagram:hover {
-	background: #517ea5;
-}
+
+
 .bottom-border {
 	border-bottom: 1px solid #ededed;
 }
@@ -2042,7 +2020,6 @@ table-bordered th, .table-bordered td {
 
 footer {
 	border-top: 3px solid #e74c3c;
-	margin: 20px 0 10px 0;
 	background-color: #3d566e;
 }
 footer .top-sec {
@@ -2315,7 +2292,7 @@ footer .stars {
 }
 .navbar-nav {
 	float: none!important;
-	margin: 7.5px -15px;
+	margin: 0px;
 }
 .navbar-nav>li>a {
 	padding-top: 10px;
@@ -2430,7 +2407,6 @@ footer .stars {
 	margin-bottom: 5px;
 }
 .copyrights {
-	text-align: left;
 	margin-bottom: 5px;
 }
 .mid-sec .list-unstyled li {

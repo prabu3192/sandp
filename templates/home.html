@@ -5,7 +5,11 @@
 
 <style>
   {% block style %}
-
+{% if request.path == "/" %}
+ .top-margin {
+	margin-top: 45px;
+}
+{% endif %}
   {% endblock %}
 
 </style>

@@ -7,18 +7,18 @@
       <div class="row">
         <div class="col-md-12 text-uppercase">
           <div class="row">
-            <div class="col-lg-2 col-md-3 col-sm-4 hidden-xs header-title-text">
+            <div class="col-lg-2 col-md-3 col-sm-3 hidden-xs header-title-text">
 			    <div class="hidden-xs">Rechercher dans Stars &amp; People</div>
             </div>
-            <div class="col-lg-8 col-md-7 col-sm-5 col-xs-9">
+            <div class="col-lg-8 col-md-6 col-sm-6 col-xs-9">
 			<form class="form-inline" method="GET" action="{% url 'search' %}">
 				<input type="text" placeholder="Rechercher*" id="searchInput" name="q" required="" class="form-control" value='{{requste.GET.q}}'/>
 				<button class="btn btn-danger" id="navbarButton" type="submit" style="background: #ffec00 !important;color:#000;">Ok</button>
 			</form>
 			</div>
-			<div class="col-lg-2 col-md-2 col-sm-3 col-xs-3">
+			<div class="col-lg-2 col-md-3 col-sm-3 col-xs-3 header-user">
 			  {% if request.user.is_authenticated %}
-			  <div class="userstatus" style="float:right;padding-top:5px;">
+			  <div class="userstatus" style="padding-top:5px;">
 			  <a href="#"><b>Bonjour </b>{{ request.user}}</a><br/>
 			  <a href="{% url 'account_logout' %}">Se déconnecter</a>
 			  </div>
@@ -40,8 +40,8 @@
     <div class="container-fluid header">
       <div class="row">
         <div class="col-sm-4 col-md-3 col-lg-2 wow fadeInUpLeft animated"><a class="navbar-brand" href="\">&npsb;</a></div>
-
-       <div class="col-md-3 col-lg-3 f-social hidden-xs ">
+		<div class="col-sm-8 col-md-9 col-lg-10">
+       <div class="col-md-12 col-lg-4 f-social hidden-xs ">
             <ul class="list-inline">
               <li> <a href="#"><span class="ion-social-twitter"></span></a> </li>
               <li> <a href="#"><span class="ion-social-facebook"></span></a> </li>
@@ -51,7 +51,7 @@
             </ul>
           </div>
 
-        <div class="col-md-4 col-lg-4 hidden-xs header-news-form " >                
+        <div class="col-md-12 col-lg-5 hidden-xs header-news-form " >                
                 <form class="form-inline" action="" method="post">
                    {% csrf_token %}
                     {{ formNews }}
@@ -59,7 +59,7 @@
                   <span>{{message}}</span>
                 </form>
               </div>
-        <div class="col-sm-4 col-md-3 col-lg-3 header-user-status">
+        <div class="col-md-12 col-lg-3 header-user-status">
 		  <div class="hidden-xs">
           <a  href="{% if request.user.is_authenticated %} /media/{{fileName.2.fileMagazine}} 
 					{% else %} {% url 'account_login' %}?next={{request.path}}
@@ -72,11 +72,21 @@
         </div> 
 
 
+		</div>
 	  </div>
     </div>
 	        
     <!-- header end --> 
-	  
+	<!-- magazine start-->
+	<div class="magazinetop">
+	  {% for f in fileName %} 
+
+	  <img class="{% cycle 'magazineimg1' 'magazineimg2' 'magazineimg3' %}" src="{% thumbnail f.image 85x111 %}" alt="image doesn't avilable"/>
+
+	  {% endfor %}
+
+	</div>
+	<!-- magazine end--> 
     <!-- nav and search start -->
     <div class="nav-search-outer">
                 <!-- nav start -->

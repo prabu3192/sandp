@@ -29,7 +29,7 @@ h1 {
       {% for articleCategorie in articleCategories%}
       <div class="col-md-6">
       <div class="col-sm-12">
-          <img class="img-thumbnail img-responsive cat-thumb-img" src="{{articleCategorie.image.url}}"  alt="image does not avalable"/>
+          <a href="{% url 'myview' articleCategorie.id  %}"><img class="img-thumbnail img-responsive cat-thumb-img" src="{{articleCategorie.image.url}}"  alt="image does not avalable"/></a>
       </div>
       <div class="col-sm-12">
         <h3>{{articleCategorie.titre}}</h3>
