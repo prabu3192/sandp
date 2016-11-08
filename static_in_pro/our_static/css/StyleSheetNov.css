@@ -560,7 +560,7 @@ form p{
 }
 
 .mega-menu {
-    min-width: 514px !important;
+    min-width: 714px !important;
 }
 .mega-sub{
 	min-height:auto;
@@ -1030,6 +1030,12 @@ footer{
     height:470px;
 	width:100%;
 }
+.horo_sub_img {
+    width: 30px;
+    height: 26px;
+	border-radius: 50% !important;
+}
+
 @media screen and (max-width: 470px) {
 #sync1.owl-carousel .owl-item  img{
     height:60vw;

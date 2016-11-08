@@ -109,23 +109,27 @@
                      {% if categorieArticle.section.section_name == sectionArticle.section_name %}
 						{% if sectionArticle.section_name == "Horoscope" %}
 							{% if forloop.first %}								
-								 <div class="col-md-4">
+								 <div class="col-md-3">
 								<ul class="mega-sub">
 							{% endif %}
+						<li><a href="{% url 'categories' categorieArticle.id %}"><span class="ion-ios7-arrow-right nav-sub-icn"></span>
+						<span class="nav-sub-icn"><img src="/static/images/horoscope/{{categorieArticle.slug}}.png" class=" horo_sub_img"/></span>
+						{{categorieArticle.categorie_nom}}</a></li>          
 
-						{% endif %}
-						<li><a href="{% url 'categories' categorieArticle.id %}"><span class="ion-ios7-arrow-right nav-sub-icn"></span>{{categorieArticle.categorie_nom}}</a></li>          
-						{% if sectionArticle.section_name == "Horoscope" %}
-						{% if forloop.counter|divisibleby:"3" and  not forloop.last%}
+							{% if forloop.counter|divisibleby:"3" and  not forloop.last%}
 								</ul>
 								 </div>
-								 <div class="col-md-4">
+								 <div class="col-md-3">
 								<ul class="mega-sub">
 							{% endif %}
-						{% if forloop.last %}
+							{% if forloop.last %}
 									</ul>
 								 </div>
 							{% endif %} 
+						
+						{% else %}
+						
+						<li><a href="{% url 'categories' categorieArticle.id %}"><span class="ion-ios7-arrow-right nav-sub-icn"></span>{{categorieArticle.categorie_nom}}</a></li> 
 						{% endif %}
 				   {% endif %}
                    {% endfor %}
