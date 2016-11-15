@@ -467,9 +467,10 @@ button#submitSignupForm {
   transition: all 0.3s;
   -ms-transition: all 0.3s ease; /* IE 9 */
   -o-transition: all 0.3s ease; /* Opera */  
-  
+   
  
 }
+
 .magazineimg1:hover  {	
   -moz-transform:rotate(+11deg) scale(1.1);
   -webkit-transform:rotate(+11deg) scale(1.1);
@@ -560,7 +561,7 @@ form p{
 }
 
 .mega-menu {
-    min-width: 714px !important;
+    min-width: 734px !important;
 }
 .mega-sub{
 	min-height:auto;
@@ -1031,9 +1032,41 @@ footer{
 	width:100%;
 }
 .horo_sub_img {
-    width: 30px;
-    height: 26px;
+    width: 41px;
+    height: 42px;
 	border-radius: 50% !important;
+}
+
+.magazine-thumbleft img{
+    width:40%;
+    margin: 25px 0px;
+}
+.magazine-desc{
+    margin: 100px 0;
+	font-size:25px !important;
+}
+.download-pdf{
+	margin: 10px 0;
+}
+.magazine-thumbleft img{
+    -webkit-transition: all 1s ease; /* Safari and Chrome */
+    -moz-transition: all 1s ease; /* Firefox */
+    -o-transition: all 1s ease; /* IE 9 */
+    -ms-transition: all 1s ease; /* Opera */
+    transition: all 1s ease;
+    max-width: 100%;
+}
+.magazine-thumbleft:hover img{
+    -webkit-transform:scale(1.25); /* Safari and Chrome */
+    -moz-transform:scale(1.25); /* Firefox */
+    -ms-transform:scale(1.25); /* IE 9 */
+    -o-transform:scale(1.25); /* Opera */
+    transform:scale(1.25);
+}
+
+.magazinetop a:hover img {
+	border: 2px solid #e5007e;
+	opacity: 1;
 }
 
 @media screen and (max-width: 470px) {

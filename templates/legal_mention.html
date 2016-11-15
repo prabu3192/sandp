@@ -1,0 +1,80 @@
+ {% extends "base_page.html" %}
+{% load crispy_forms_tags %}
+
+{% block style %}
+h1 {
+    border-bottom: 5px !important;
+	padding-bottom:5px;
+}
+p {
+    padding-left: 0px;
+}
+
+{% endblock %}
+
+{% block topsec %}
+<div class="">
+    <div class="page-header">
+      <h1>MENTION LEGALES</h1>
+	  {% block breadcrumb %}
+      <ol class="breadcrumb">
+        <li><a href="#">Home</a></li>
+        <li class="active">Mention legales</li>
+      </ol>
+	  {% endblock %}
+    </div>
+  </div>
+{% endblock %}
+
+
+{% block content %}
+<!-- left sec start -->
+<div class="col-md-12 col-sm-12">
+<div class="row">
+{% block articles %}
+<div class="col-sm-12">
+<p>
+                        Le site internet www.devoirdememoire.net est édité par Inaya Médias, société par actions simplifiée  unipersonnelle au capital de
+                        10000€, immatriculée au Registre du Commerce et des Sociétés de Paris sous le numéro 531 593 937.
+                    </p>
+                    <ul class="noeffect">
+                        <li>
+                            Siège Social : <adress> 38 rue des Mathurins, 75008 Paris, France</adress>
+                        </li>
+                        <li>
+                            Adresse email :<a href="mailto:contact@inaya.biz?Subject=Devoir%20de%20memoire"> contact@inaya.biz</a>
+                        </li>
+                        <li>
+                            Numéro de TVA intracommunautaire : FR 70531593937
+                        </li>
+                    </ul>
+                    <p>
+                        Directeur de la publication : Sami Jemni <br />
+                        Le site est hébergé par : 1&1 Internet SARL FRANCE <br/>
+                        <adress>Siège social : 7, place de la Gare - 57200 Sarreguemines Cedex
+                            Numéro de téléphone : +33 (0) 9 70 80 89 11</adress>
+                    </p>
+                    <h4><b>Propriété Intellectuelle</b> </h4>
+                    <p>
+                        Le site a été réalisé par <adress>Inaya Médias, 38 rue des Mathurins, 75008 Paris, France,</adress> www.inaya.biz
+                        <br>Inaya Médias est propriétaire, ou détient les autorisations nécessaires à l'utilisation de l'intégralité du contenu de ce site y compris les marques, logos et nom de domaine.Toute reproduction, modification, publication, transmission et / ou diffusion, en tout ou partie, de toute information ou élément du site par quelque moyen que ce soit, sur quelque support que ce soit, sans le consentement préalable écrit d’Inaya Médias, est interdite.
+                    </p>
+                    <h4><b>Protection des données personnelles</b></h4>
+                    <p>
+                        Conformément à la loi « informatique et liberté » du 6 janvier 1978 modifiée en 2004, tout utilisateur dispose d’un droit d’accès, de rectification,
+                        de suppression et d’opposition aux données personnelles le concernant. Il peut également, pour des motifs légitimes, s’opposer au traitement des données le concernant.
+                        Pour exercer ce droit, une demande peut être adressée à <a href="mailto:contact@inaya.biz?Subject=donnes%20personneles"> contact@inaya.biz</a>
+                    </p>
+                    <h4><b>Liens hypertextes</b> </h4>
+                    <p>
+                        Le site peut contenir des liens vers les sites Internet de tiers. Inaya Médias décline toute responsabilité quant à la disponibilité technique et du contenu des sites Internet auxquels les utilisateurs accéderaient par l’intermédiaire du site.
+                    </p>
+
+ </div>
+  {% endblock %}
+</div>
+ </div>
+{% endblock %}
+{% block sideBlock %}
+
+{% endblock %}

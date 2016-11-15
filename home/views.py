@@ -250,6 +250,62 @@ def addSouscripteurNews(request):
 
     return render(request, "home.html",locals(), context_instance=RequestContext(request))
 
+def legal(request):
+    title = 'Legal mention'
+    context = {
+        'queryset': request.user,
+        'title'  : title,
+    }	
+    return render(request, "legal_mention.html", context, context_instance=RequestContext(request))
+	
+def tos(request):
+    title = 'TOS'
+    context = {
+        'queryset': request.user,
+        'title'  : title,
+    }	
+    return render(request, "tos.html", context, context_instance=RequestContext(request))
+
+def publicity(request):
+    title = 'publicity'
+    context = {
+        'queryset': request.user,
+        'title'  : title,
+    }	
+    return render(request, "publicity.html", context, context_instance=RequestContext(request))
+
+def mobileapp(request):
+    title = 'mobileapp'
+    context = {
+        'queryset': request.user,
+        'title'  : title,
+    }	
+    return render(request, "mobileapp.html", context, context_instance=RequestContext(request))
+
+def subscription(request):
+    title = 'subscription'
+    context = {
+        'queryset': request.user,
+        'title'  : title,
+    }	
+    return render(request, "subscription.html", context, context_instance=RequestContext(request))
+
+def sitemap(request):
+    title = 'sitemap'
+    context = {
+        'queryset': request.user,
+        'title'  : title,
+    }	
+    return render(request, "sitemap.html", context, context_instance=RequestContext(request))
+
+def magazine(request):
+    title = 'magazine'
+    context = {
+        'queryset': request.user,
+        'title'  : title,
+    }	
+    return render(request, "magazine.html", context, context_instance=RequestContext(request))	
+	
 class JointLoginSignupView(LoginView):
     form_class = LoginForm
     signup_form  = SignupForm

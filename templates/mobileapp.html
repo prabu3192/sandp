@@ -1,0 +1,42 @@
+ {% extends "base_page.html" %}
+{% load crispy_forms_tags %}
+
+{% block style %}
+h1 {
+    border-bottom: 5px !important;
+	padding-bottom:5px;
+}
+
+{% endblock %}
+
+{% block topsec %}
+<div class="">
+    <div class="page-header">
+      <h1>NOS APPLIS MOBILE</h1>
+	  {% block breadcrumb %}
+      <ol class="breadcrumb">
+        <li><a href="#">Home</a></li>
+        <li class="active">Nos applis mobile</li>
+      </ol>
+	  {% endblock %}
+    </div>
+  </div>
+{% endblock %}
+
+
+{% block content %}
+<!-- left sec start -->
+<div class="col-md-12 col-sm-12">
+<div class="row">
+{% block articles %}
+<div class="col-sm-12">
+
+Donec arcu ipsum, faucibus id condimentum sit amet, ultricies a sapieuis eu porta diam! Nulla dignissim sodales turpis, in volutpat odio pharetra vel. Praesent eu metus est, a aliquam massa. Proin turpis lorem, tincidunt rutrum semper eget, pharetra ut lectus.
+ </div>
+ {% endblock %}
+</div>
+ </div>
+{% endblock %}
+{% block sideBlock %}
+
+{% endblock %}

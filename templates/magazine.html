@@ -1,0 +1,59 @@
+ {% extends "base_page.html" %}
+{% load crispy_forms_tags %}
+
+{% block style %}
+h1 {
+    border-bottom: 5px !important;
+	padding-bottom:5px;
+}
+
+{% endblock %}
+
+{% block topsec %}
+<div class="">
+    <div class="page-header">
+      <h1>Magazine</h1>
+	  {% block breadcrumb %}
+      <ol class="breadcrumb">
+        <li><a href="#">Home</a></li>
+        <li class="active">Magazine</li>
+      </ol>
+	  {% endblock %}
+    </div>
+  </div>
+{% endblock %}
+
+
+{% block content %}
+<!-- left sec start -->
+<div class="col-md-12 col-sm-12">
+<div class="row">
+{% block articles %}
+<div class="col-sm-12">
+
+	<ul class="list-unstyled">
+	  {% for f in fileName|slice:":3" %}
+	  <li> 
+		<div class="row">
+		  <div class="col-md-6  col-sm-12 col-xs-12 text-center magazine-thumbleft">
+			  <img class="img-thumbnail" src="{{f.image.url}}" img-responsive alt="Image doesn't not available"/>                    
+			</div>
+		  <div class="col-md-6 text-center magazine-desc">
+			<h4>{{ f.titre }}</h4>
+			<div class="f-sub-info">
+			  <div class="description">
+			  <a href="#" class="btn btn-danger download-pdf" style="background: #ffec00 !important;color:#000; border: 1px solid #e5007e;">Download as PDF</a>
+			  </div>
+			</div>
+		</div>
+		</li>
+		{% endfor %}
+	</ul>
+</div>
+ {% endblock %}
+</div>
+ </div>
+{% endblock %}
+{% block sideBlock %}
+
+{% endblock %}

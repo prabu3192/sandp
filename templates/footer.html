@@ -81,12 +81,12 @@
             <div class="row">
               <div class="col-sm-8 col-xs-12 f-nav wow fadeInDown animated" data-wow-delay="0.5s" data-wow-offset="10">
                 <ul class="list-inline ">
-                  <li> <a href="#"> MENTION LEGALES </a> </li>
-                  <li> <a href="#">CGU  </a> </li>
-                  <li> <a href="#"> PUBLICITE </a> </li>
-                  <li> <a href="#"> NOS APPLIS MOBILE </a> </li>
-                  <li> <a href="#"> ABONNEMENT </a> </li>
-                  <li> <a href="#"> PLAN DU SITE </a> </li>                  
+                  <li> <a href="{% url 'legal' %}"> MENTION LEGALES </a> </li>
+                  <li> <a href="{% url 'tos' %}">CGU  </a> </li>
+                  <li> <a href="{% url 'publicity' %}"> PUBLICITE </a> </li>
+                  <li> <a href="{% url 'mobileapp' %}"> NOS APPLIS MOBILE </a> </li>
+                  <li> <a href="{% url 'subscription' %}"> ABONNEMENT </a> </li>
+                  <li> <a href="{% url 'sitemap' %}"> PLAN DU SITE </a> </li>                  
                   <li> <a href="{% url 'sendMail' %}"> CONTACTEZ-NOUS </a> </li>
                 </ul>
               </div>

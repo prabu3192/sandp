@@ -1,4 +1,5 @@
 {% load staticfiles %}
+{% load crispy_forms_tags %}
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -29,18 +30,56 @@
 {% block navbar %}
 {% include 'navbar.html' %}
 {% endblock %}
-
+<div class="container">
+	{% block floatingform %}
+		{% include 'floating_form.html' %}
+	{% endblock %}
+</div>	
+<div class="container">	
+	{% block topsec %}
+		{% include 'topsec.html' %}
+	{% endblock %}
+</div>	
 <div class="container">
   {% block content %}
   
   {% endblock %}
 </div>
+{% block login %}
+
+	{% include 'home_login.html' %}
+	
+{% endblock %}
 {% include 'footer.html' %}
 </div>
 <!-- wrapper end --> 
 {% include "javascript.html" %}
 {% block extra_js %}
+<script type="text/javascript">
+	$(document).ready(function () {
+
+		$('#btnRegiser').click(function () {
+			$('#login-modal').modal('hide');
+			$('#register-modal').modal('show');
+		});
+
+		$('#btnReset').click(function () {
+			$('.resetpassword').slideToggle();
+		});		
+		
+				var _scroll = true, _timer = false, _floatbox = $("#contact_form"), _floatbox_opener = $(".contact-opener") ;
+		//initial contact form position
+		_floatbox.show();
+		_floatbox_body = $("#floating-body");
+		
+
+		
+
+	});
+	
+	</script>
 
 {% endblock %}
+
 </body>
 </html>

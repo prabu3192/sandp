@@ -1,111 +1,108 @@
 {% load staticfiles %}
 {% load socialaccount %}
 {% load thumbnail %}
-  <!-- header toolbar start -->
-  <div class="header-toolbar">
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col-md-12 text-uppercase">
-          <div class="row">
-            <div class="col-lg-2 col-md-3 col-sm-3 hidden-xs header-title-text">
-			    <div class="hidden-xs">Rechercher dans Stars &amp; People</div>
-            </div>
-            <div class="col-lg-8 col-md-6 col-sm-6 col-xs-9">
-			<form class="form-inline" method="GET" action="{% url 'search' %}">
-				<input type="text" placeholder="Rechercher*" id="searchInput" name="q" required="" class="form-control" value='{{requste.GET.q}}'/>
-				<button class="btn btn-danger" id="navbarButton" type="submit" style="background: #ffec00 !important;color:#000;">Ok</button>
-			</form>
-			</div>
-			<div class="col-lg-2 col-md-3 col-sm-3 col-xs-3 header-user">
-			  {% if request.user.is_authenticated %}
-			  <div class="userstatus" style="padding-top:5px;">
-			  <a href="#"><b>Bonjour </b>{{ request.user}}</a><br/>
-			  <a href="{% url 'account_logout' %}">Se déconnecter</a>
-			  </div>
-			  {% else %}     
-			  <div>
-				<a href="{% url 'account_login' %}" class="btn btn-danger" style="background: #ffec00 !important;color:#000; border: 1px solid #e5007e;">Connexion</a>
-			  </div>
-			  {% endif %}
-			</div>
-          </div>
+<!-- header toolbar start -->
+<div class="header-toolbar">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12 text-uppercase">
+        <div class="row">
+          <div class="col-lg-2 col-md-3 col-sm-3 hidden-xs header-title-text">
+           <div class="hidden-xs">Rechercher dans Stars &amp; People</div>
+         </div>
+         <div class="col-lg-8 col-md-6 col-sm-6 col-xs-9">
+           <form class="form-inline" method="GET" action="{% url 'search' %}">
+            <input type="text" placeholder="Rechercher*" id="searchInput" name="q" required="" class="form-control" value='{{requste.GET.q}}'/>
+            <button class="btn btn-danger" id="navbarButton" type="submit" style="background: #ffec00 !important;color:#000;">Ok</button>
+          </form>
         </div>
+        <div class="col-lg-2 col-md-3 col-sm-3 col-xs-3 header-user">
+         {% if request.user.is_authenticated %}
+         <div class="userstatus" style="padding-top:5px;">
+           <a href="#"><b>Bonjour </b>{{ request.user}}</a><br/>
+           <a href="{% url 'account_logout' %}">Se déconnecter</a>
+         </div>
+         {% else %}     
+         <div>
+          <a href="{% url 'account_login' %}" class="btn btn-danger" style="background: #ffec00 !important;color:#000; border: 1px solid #e5007e;">Connexion</a>
+        </div>
+        {% endif %}
       </div>
     </div>
   </div>
-  <!-- header toolbar end --> 
-   <!-- sticky header start -->
-  <div class="sticky-header"> 
-    <!-- header start -->
-    <div class="container-fluid header">
-      <div class="row">
-        <div class="col-sm-4 col-md-3 col-lg-2 wow fadeInUpLeft animated"><a class="navbar-brand" href="\">&npsb;</a></div>
-		<div class="col-sm-8 col-md-9 col-lg-10">
+</div>
+</div>
+</div>
+<!-- header toolbar end --> 
+<!-- sticky header start -->
+<div class="sticky-header"> 
+  <!-- header start -->
+  <div class="container-fluid header">
+    <div class="row">
+      <div class="col-sm-4 col-md-3 col-lg-2 wow fadeInUpLeft animated"><a class="navbar-brand" href="\">&npsb;</a></div>
+      <div class="col-sm-8 col-md-9 col-lg-10">
        <div class="col-md-12 col-lg-4 f-social hidden-xs ">
-            <ul class="list-inline">
-              <li> <a href="#"><span class="ion-social-twitter"></span></a> </li>
-              <li> <a href="#"><span class="ion-social-facebook"></span></a> </li>
-              <li> <a href="#"><span class="ion-social-instagram"></span></a> </li>
-              <li> <a href="#"><span class="ion-social-pinterest"></span></a> </li>
-              <li> <a href="#"><span class="ion-social-youtube"></span></a> </li>
-            </ul>
-          </div>
+        <ul class="list-inline">
+          <li> <a href="#"><span class="ion-social-twitter"></span></a> </li>
+          <li> <a href="#"><span class="ion-social-facebook"></span></a> </li>
+          <li> <a href="#"><span class="ion-social-instagram"></span></a> </li>
+          <li> <a href="#"><span class="ion-social-pinterest"></span></a> </li>
+          <li> <a href="#"><span class="ion-social-youtube"></span></a> </li>
+        </ul>
+      </div>
 
-        <div class="col-md-12 col-lg-5 hidden-xs header-news-form " >                
-                <form class="form-inline" action="" method="post">
-                   {% csrf_token %}
-                    {{ formNews }}
-                  <button type="submit" class="btn"> <span class="ion-paper-airplane text-danger"></span> </button>
-                  <span>{{message}}</span>
-                </form>
-              </div>
-        <div class="col-md-12 col-lg-3 header-user-status">
-		  <div class="hidden-xs">
-          <a  href="{% if request.user.is_authenticated %} /media/{{fileName.2.fileMagazine}} 
-					{% else %} {% url 'account_login' %}?next={{request.path}}
-                    {% endif %}" 
-                  style="margin-right: 1em;color:#e5007e;"><span class="blink-me">Telecharger magazine</span></a>
+      <div class="col-md-12 col-lg-5 hidden-xs header-news-form " >                
+        <form class="form-inline" action="" method="post">
+         {% csrf_token %}
+         {{ formNews }}
+         <button type="submit" class="btn"> <span class="ion-paper-airplane text-danger"></span> </button>
+         <span>{{message}}</span>
+       </form>
+     </div>
+     <div class="col-md-12 col-lg-3 header-user-status">
+      <div class="hidden-xs">
+        <a  href="{% if request.user.is_authenticated %} /media/{{fileName.2.fileMagazine}} 
+        {% else %} {% url 'account_login' %}?next={{request.path}}
+        {% endif %}" 
+        style="margin-right: 1em;color:#e5007e;"><span class="blink-me">Telecharger magazine</span></a>
 
-		  </div>
-		  <div>
-		  </div>
-        </div> 
+      </div>
+      <div>
+      </div>
+    </div> 
 
 
-		</div>
-	  </div>
-    </div>
-	        
-    <!-- header end --> 
-	<!-- magazine start-->
-	<div class="magazinetop">
-	  {% for f in fileName %} 
+  </div>
+</div>
+</div>
 
-	  <img class="{% cycle 'magazineimg1' 'magazineimg2' 'magazineimg3' %}" src="{% thumbnail f.image 85x111 %}" alt="image doesn't avilable"/>
-
-	  {% endfor %}
-
-	</div>
-	<!-- magazine end--> 
-    <!-- nav and search start -->
-    <div class="nav-search-outer">
-                <!-- nav start -->
-                <nav class="navbar navbar-inverse" role="navigation">
-        <div class="container-fluid">
-          <div class="row">
-            <div class="col-xs-12 col-lg-12"> 
-			  <a href="javascript:;" class="toggle-search pull-right"><span class="ion-ios7-search"></span></a>
-              <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
-              </div>
-			  <div><a class="navbar-brand" href="index-2.html">&nbsp;</a></div>
-              <div class="collapse navbar-collapse" id="navbar-collapse">
-                <ul class="nav navbar-nav text-uppercase main-nav ">
-                  <li class="active"><a href="/">home</a></li>
-                  {% for sectionArticle in sectionArticles %}
-              <li class="dropdown"> <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown">{{sectionArticle.section_name}}<span class="ion-ios7-arrow-down nav-icn"></span></a>    
-                  <ul class="dropdown-menu text-capitalize {% if sectionArticle.section_name == 'Horoscope' %} mega-menu dropdown-menu-large dropdown-menu-right row {% endif %}" role="menu">
-                    {% for categorieArticle in sectionArticle.categorieArticles %}
+<!-- header end --> 
+<!-- magazine start-->
+<div class="magazinetop">
+ {% for f in fileName %} 
+ <a href="{% url 'magazine' %}"><img class="{% cycle 'magazineimg1' 'magazineimg2' 'magazineimg3' %}" src="{% thumbnail f.image 85x111 %}" alt="image doesn't avilable"/>
+ {% endfor %}
+</div>
+<!-- magazine end--> 
+<!-- nav and search start -->
+<div class="nav-search-outer">
+  <!-- nav start -->
+  <nav class="navbar navbar-inverse" role="navigation">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-xs-12 col-lg-12"> 
+         <a href="javascript:;" class="toggle-search pull-right"><span class="ion-ios7-search"></span></a>
+         <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+        </div>
+        <div><a class="navbar-brand" href="index-2.html">&nbsp;</a></div>
+        <div class="collapse navbar-collapse" id="navbar-collapse">
+          <ul class="nav navbar-nav text-uppercase main-nav ">
+            <li class="active"><a href="/">home</a></li>
+            {% for sectionArticle in sectionArticles %}
+            <li class="dropdown"> <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown">{{sectionArticle.section_name}}<span class="ion-ios7-arrow-down nav-icn"></span></a>    
+              <ul class="dropdown-menu text-capitalize {% if sectionArticle.section_name == 'Horoscope' %} mega-menu dropdown-menu-large dropdown-menu-right row {% endif %}" role="menu">
+                {% for categorieArticle in sectionArticle.categorieArticles %}
                      {% if categorieArticle.section.section_name == sectionArticle.section_name %}
 						{% if sectionArticle.section_name == "Horoscope" %}
 							{% if forloop.first %}								
@@ -133,34 +130,33 @@
 						{% endif %}
 				   {% endif %}
                    {% endfor %}
-                   </ul>
-              </li> 
-              {% endfor %} 
-              
-                                                  
-                </ul>
-              </div>
-            
-			</div>
+           </ul>
+         </li> 
+         {% endfor %} 
+         
+         
+       </ul>
+     </div>
+     
+   </div>
 
-			</div>
-          </div>
-        </div>
-        <!-- nav end -->
-        <!-- search start -->
-        
-        <div class="search-container ">
-          <div class="container">
-            <form method="GET" action="{% url 'search' %}" role="search">
-              <input type="text" id="search-bar" placeholder="Taper et appuyer sur Entrée..." autocomplete="off" name="q" value='{{requste.GET.q}}'/>
-            </form>
-          </div>
-        </div>
-        <!-- search end --> 
-      </nav>
-      <!--nav end--> 
-    </div>
-    <!-- nav and search end--> 
+ </div>
+</div>
+</div>
+<!-- nav end -->
+<!-- search start -->
+
+<div class="search-container ">
+  <div class="container">
+    <form method="GET" action="{% url 'search' %}" role="search">
+      <input type="text" id="search-bar" placeholder="Taper et appuyer sur Entrée..." autocomplete="off" name="q" value='{{requste.GET.q}}'/>
+    </form>
   </div>
-  <!-- sticky header end --> 
- 
+</div>
+<!-- search end --> 
+</nav>
+<!--nav end--> 
+</div>
+<!-- nav and search end--> 
+</div>
+<!-- sticky header end --> 
